@@ -22,7 +22,7 @@ public class HomePageradapter extends PagerAdapter {
     private Context mContext;
 
     int[] res = {
-            R.drawable.ailis_logo,R.drawable.jaishree_logo,R.drawable.jothi_logo,R.drawable.ailis_logo,R.drawable.jaishree_logo,R.drawable.jothi_logo};
+            R.drawable.ailis_logo,R.drawable.jaishree_logo,R.drawable.mathura_nav_icon,R.drawable.nahar_logo,R.drawable.thiruvidanthai_splash_img};
 
 
 
@@ -74,8 +74,23 @@ public class HomePageradapter extends PagerAdapter {
 
                     mContext.startActivity(mainIntent);
 
-                }
+                }else if(position==3)
+                {
+                    Intent mainIntent = new Intent(
+                            mContext,
+                            com.site.siteproject.padapai_nahar.Splash.class);
 
+                    mContext.startActivity(mainIntent);
+
+                }else if(position==4)
+                {
+                    Intent mainIntent = new Intent(
+                            mContext,
+                            com.site.siteproject.thiruvidanthai.Splash.class);
+
+                    mContext.startActivity(mainIntent);
+
+                }
             }
         });
 

@@ -39,12 +39,11 @@ import com.site.siteproject.R;
                     overridePendingTransition(R.anim.fadeinact,
                             R.anim.fadeoutact);
 
-                   /* Intent mainIntent = new Intent(
+                    Intent mainIntent = new Intent(
                             Splash.this,
-                            Login.class);
+                            DashBoard.class);
 
                     Splash.this.startActivity(mainIntent);
-*/
 
 
 

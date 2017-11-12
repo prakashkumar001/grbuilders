@@ -1,5 +1,6 @@
 package com.site.siteproject.padapai_nahar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -27,7 +28,7 @@ import com.site.siteproject.R;
             splashimg=(ImageView) findViewById(R.id.splash_logo);
 
             layout.setBackgroundResource(R.drawable.ailis_splash_bg);
-            splashimg.setImageResource(R.drawable.ailis_splashimg);
+            splashimg.setImageResource(R.drawable.nahar_logo);
 
 
 
@@ -38,12 +39,11 @@ import com.site.siteproject.R;
                     overridePendingTransition(R.anim.fadeinact,
                             R.anim.fadeoutact);
 
-                   /* Intent mainIntent = new Intent(
+                    Intent mainIntent = new Intent(
                             Splash.this,
-                            Login.class);
+                            DashBoard.class);
 
                     Splash.this.startActivity(mainIntent);
-*/
 
 
 

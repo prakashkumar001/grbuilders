@@ -1,5 +1,6 @@
 package com.site.siteproject.thiruvidanthai;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -38,12 +39,11 @@ import com.site.siteproject.R;
                     overridePendingTransition(R.anim.fadeinact,
                             R.anim.fadeoutact);
 
-                   /* Intent mainIntent = new Intent(
+                    Intent mainIntent = new Intent(
                             Splash.this,
-                            Login.class);
+                            DashBoard.class);
 
                     Splash.this.startActivity(mainIntent);
-*/
 
 
 

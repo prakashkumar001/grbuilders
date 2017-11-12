@@ -1,5 +1,6 @@
 package com.site.siteproject.mathura;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.site.siteproject.R;
+import com.site.siteproject.jaishree.*;
 
 /**
  * Created by Prakash on 11/8/2017.
@@ -38,12 +40,13 @@ import com.site.siteproject.R;
                     overridePendingTransition(R.anim.fadeinact,
                             R.anim.fadeoutact);
 
-                   /* Intent mainIntent = new Intent(
+                    Intent mainIntent = new Intent(
                             Splash.this,
-                            Login.class);
+                            com.site.siteproject.mathura.DashBoard.class);
 
                     Splash.this.startActivity(mainIntent);
-*/
+
+
 
 
 
