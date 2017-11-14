@@ -5,16 +5,91 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_margin="15dp"
-    app:cardElevation="20dp"
     app:cardCornerRadius="10dp"
     app:cardBackgroundColor="@android:color/white"
     android:layout_height="250dp">
 
 
-
-    <TextView
-        android:id="@+id/content"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                >
+
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/jaishree_spec1"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/gradient_jaishree"
+            android:orientation="vertical"
+            >
+
+            </LinearLayout>
+            </FrameLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                >
+
+
+
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:maxLength="80"
+            android:textSize="18dp"
+            android:text="hgfuhasduhfguhguhagfyuhgafugasyufguagsgvfuhasgvfjasgujfvashdfgvyuagdfhasvgfhasvfuvashfbvashfashifvhiasfhashfashfvhiasvfhshfvashifvashifvhisvfhivsfhiashifvashifvashifvhfvahifvashivfhiavshifvashifhias"
+            android:layout_weight="1"
+            android:layout_gravity="bottom"
+            />
+
+                <TextView
+                    android:id="@+id/tv_learnmore_quest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:gravity="bottom"
+                    android:text="Read more..."
+                    android:foreground="?attr/selectableItemBackground"
+                    android:paddingTop="15dp"
+                    android:textColor="#BF1E2E"
+                    android:textSize="12dp" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
 
 </android.support.v7.widget.CardView>
