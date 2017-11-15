@@ -42,6 +42,12 @@ public class Home extends Fragment {
         flatnames.add("FLAT -1G");
         flatnames.add("FLAT -2A , 3A & 4A");
         flatnames.add("FLAT -2B , 3B & 4B");
+        flatnames.add("FLAT -2C , 3C & 4C");
+        flatnames.add("FLAT -2D , 3D & 4D");
+        flatnames.add("FLAT -2E , 3E & 4E");
+        flatnames.add("FLAT -2H, 3H & 4J");
+        flatnames.add("FLAT -2J , 3J & 4K");
+
 
         init(view);
 
@@ -113,7 +119,9 @@ public class Home extends Fragment {
     public class CustomPagerAdapter extends PagerAdapter {
 
         private Context mContext;
-        int drawables[] = new int[]{R.drawable.flat1a_ailis, R.drawable.flat1a_ailis, R.drawable.flat1a_ailis, R.drawable.flat1a_ailis, R.drawable.flat1a_ailis};
+        int drawables[] = new int[]{R.drawable.jaishree_flat1, R.drawable.jaishree_flat1b, R.drawable.jaishree_flat1g, R.drawable.jaishree_flat2a3a4a,
+                R.drawable.jaishree_flat2b3b4b, R.drawable.jaishree_flat2c3c4c, R.drawable.jaishree_flat2d3d4d, R.drawable.jaishree_flat2e3e4e, R.drawable.jaishree_flat2h3h4j,R.drawable.jaishree_flat2j3j4k
+        };
 
         public CustomPagerAdapter(Context context) {
             mContext = context;
