@@ -19,6 +19,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.site.siteproject.R;
+import com.site.siteproject.jaishree.fragments.ContactUS;
 import com.site.siteproject.jaishree.fragments.Home;
 import com.site.siteproject.jaishree.fragments.Specification;
 
@@ -33,13 +34,14 @@ public class DashBoard extends AppCompatActivity{
     RadioGroup radioGroup;
     ViewPager viewPager;
     RadioButton radioButton;
-    LinearLayout specification,viewPlans;
+    LinearLayout specification,viewPlans,jaishree_contactus;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jaishree_dashboard);
         specification=(LinearLayout) findViewById(R.id.specification);
         viewPlans=(LinearLayout) findViewById(R.id.viewPlans);
+        jaishree_contactus=(LinearLayout) findViewById(R.id.jaishree_contactus);
        intialFragment();
 
         specification.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +59,13 @@ public class DashBoard extends AppCompatActivity{
             }
         });
 
-
+        jaishree_contactus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ContactUS contactUS=new ContactUS();
+                loadFragment(contactUS);
+            }
+        });
     }
 
 
