@@ -35,6 +35,7 @@
 
 
             <LinearLayout
+                android:id="@+id/viewPlans"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal"
@@ -77,6 +78,7 @@
 
 
             <LinearLayout
+                android:id="@+id/specification"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal"
@@ -121,6 +123,7 @@
 
 
             <LinearLayout
+                android:id="@+id/location"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal"
@@ -164,6 +167,7 @@
 
 
             <LinearLayout
+                android:id="@+id/contactus"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal"
@@ -267,7 +271,40 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            >
+
+
+
+
+                <RadioGroup
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_title"
+                    android:orientation="horizontal"></RadioGroup>
+
+
+
+            <RadioGroup
+                android:id="@+id/floor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_title"
+                android:orientation="horizontal"></RadioGroup>
+
+
+
+
+        </LinearLayout>
+
 
         <FrameLayout
             android:id="@+id/container"
