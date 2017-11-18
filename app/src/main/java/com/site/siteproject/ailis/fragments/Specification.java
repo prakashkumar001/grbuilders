@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.site.siteproject.R;
-import com.site.siteproject.jaishree.adapter.SpecificationAdapter;
+import com.site.siteproject.ailis.adapter.SpecificationAdapter;
 
 /**
  * Created by Creative IT Works on 14-Nov-17.
@@ -31,7 +31,7 @@ public class Specification extends Fragment{
         specification_list=(RecyclerView)view.findViewById(R.id.specification_list);
 
         adapter = new SpecificationAdapter(getActivity());
-        GridLayoutManager ll = new GridLayoutManager(getActivity(),2);
+        GridLayoutManager ll = new GridLayoutManager(getActivity(),4);
         ll.setOrientation(LinearLayoutManager.VERTICAL);
         specification_list.setLayoutManager(ll);
 

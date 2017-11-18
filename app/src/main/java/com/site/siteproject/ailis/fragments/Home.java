@@ -9,15 +9,20 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 
 
 import com.site.siteproject.R;
+import com.site.siteproject.utils.TouchImageView;
 
 import java.util.ArrayList;
 
@@ -31,6 +36,7 @@ public class Home extends Fragment {
     ArrayList<String> views;
     RadioGroup radioGroup,radioGroup2;
     ViewPager viewPager;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -58,6 +64,7 @@ public class Home extends Fragment {
         return view;
 
     }
+
 
     void flatintialise() {
 
@@ -176,12 +183,16 @@ public class Home extends Fragment {
 
 
     }
+
+
     public class CustomPagerAdapter extends PagerAdapter {
+
 
         private Context mContext;
         int drawables[] = new int[]{R.drawable.ailis_view1, R.drawable.ailis_view2, R.drawable.ailis_groundfloor, R.drawable.ailis_firstfloor,
                 R.drawable.ailis_secondfloor
         };
+
 
         public CustomPagerAdapter(Context context) {
             mContext = context;
@@ -192,8 +203,13 @@ public class Home extends Fragment {
             LayoutInflater inflater = LayoutInflater.from(mContext);
             ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.viewpager_item, collection, false);
 
-            ImageView imageView = (ImageView) layout.findViewById(R.id.flats);
-            imageView.setBackgroundResource(drawables[position]);
+            TouchImageView imageView = (TouchImageView) layout.findViewById(R.id.flats);
+
+            imageView.setImageResource(drawables[position]);
+
+
+
+
             collection.addView(layout);
             return layout;
         }

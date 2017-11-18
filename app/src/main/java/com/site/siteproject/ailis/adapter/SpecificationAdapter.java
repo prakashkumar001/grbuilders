@@ -26,8 +26,8 @@ public class SpecificationAdapter extends RecyclerView.Adapter<SpecificationAdap
     Dialog dialog;
 
     int[] res = {
-            R.drawable.jaishree_spec1,R.drawable.jaishree_spec2,R.drawable.jaishree_spec3,R.drawable.jaishree_spec4,R.drawable.jaishree_spec5,R.drawable.jaishree_spec6};
-    String[] contents={"Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg","Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg","Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg","Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg","Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg","Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg"};
+            R.drawable.ailis_spec1,R.drawable.ailis_spec2,R.drawable.ailis_spec3,R.drawable.ailis_spec4,R.drawable.ailis_spec5,R.drawable.ailis_spec6,R.drawable.ailis_spec7,R.drawable.ailis_spec8};
+    String[] contents={"Loren Lipsum ","Loren Lipsum ","Loren Lipsum ","Loren Lipsum ","Loren Lipsum ","Loren Lipsum ","Loren Lipsum ","Loren Lipsum "};
 
     public SpecificationAdapter(Activity context) {
 
@@ -41,7 +41,7 @@ public class SpecificationAdapter extends RecyclerView.Adapter<SpecificationAdap
     @Override
     public SpecificationAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.jaishree_specification_item, parent, false);
+                .inflate(R.layout.ailis_spec_item, parent, false);
 
         return new SpecificationAdapter.MyViewHolder(itemView);
     }
@@ -50,12 +50,7 @@ public class SpecificationAdapter extends RecyclerView.Adapter<SpecificationAdap
     public void onBindViewHolder(SpecificationAdapter.MyViewHolder holder, final int position) {
         holder.layout.setImageResource(res[position]);
         holder.content.setText(contents[position]);
-        holder.tv_learnmore_quest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showInfoDialog(position);
-            }
-        });
+
 
     }
 
@@ -75,7 +70,7 @@ public class SpecificationAdapter extends RecyclerView.Adapter<SpecificationAdap
 
             layout=(ImageView)itemView.findViewById(R.id.image);
             content=(TextView) itemView.findViewById(R.id.content);
-            tv_learnmore_quest=(TextView) itemView.findViewById(R.id.tv_learnmore_quest);
+            //tv_learnmore_quest=(TextView) itemView.findViewById(R.id.tv_learnmore_quest);
 
 
 

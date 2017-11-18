@@ -17,6 +17,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.site.siteproject.R;
+import com.site.siteproject.utils.TouchImageView;
 
 import java.util.ArrayList;
 
@@ -131,8 +132,8 @@ public class Home extends Fragment {
             LayoutInflater inflater = LayoutInflater.from(mContext);
             ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.viewpager_item, collection, false);
 
-            ImageView imageView = (ImageView) layout.findViewById(R.id.flats);
-            imageView.setBackgroundResource(drawables[position]);
+            TouchImageView imageView = (TouchImageView) layout.findViewById(R.id.flats);
+            imageView.setImageResource(drawables[position]);
             collection.addView(layout);
             return layout;
         }
