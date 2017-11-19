@@ -30,10 +30,7 @@ import java.util.ArrayList;
  */
 
 public class DashBoard extends AppCompatActivity{
-    ArrayList<String> flatnames;
-    RadioGroup radioGroup;
-    ViewPager viewPager;
-    RadioButton radioButton;
+
     LinearLayout specification,viewPlans,jaishree_contactus;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -10,33 +10,57 @@
         android:orientation="horizontal"
         >
 
-        <HorizontalScrollView
-            android:layout_width="match_parent"
+
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scrollbars="none"
-            >
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Elevation"
+            />
+
+        <RadioGroup
+            android:id="@+id/views"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/rl_title"
+            android:orientation="horizontal">
+
+        </RadioGroup>
 
 
-            <RadioGroup
-                android:id="@+id/rg_header"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/rl_title"
-                android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:text="Floor Plan"
+            />
+        <RadioGroup
+            android:id="@+id/floors"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_title"
+            android:orientation="horizontal">
 
 
-            </RadioGroup>
+        </RadioGroup>
 
-        </HorizontalScrollView>
 
 
     </LinearLayout>
 
-    <ImageView
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/flat1a_ailis"
-        />
+        android:layout_height="match_parent"/>
+
 
 
 </LinearLayout>
