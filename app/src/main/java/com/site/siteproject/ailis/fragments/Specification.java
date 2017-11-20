@@ -31,7 +31,7 @@ public class Specification extends Fragment{
         specification_list=(RecyclerView)view.findViewById(R.id.specification_list);
 
         adapter = new SpecificationAdapter(getActivity());
-        GridLayoutManager ll = new GridLayoutManager(getActivity(),4);
+        GridLayoutManager ll = new GridLayoutManager(getActivity(),2);
         ll.setOrientation(LinearLayoutManager.VERTICAL);
         specification_list.setLayoutManager(ll);
 

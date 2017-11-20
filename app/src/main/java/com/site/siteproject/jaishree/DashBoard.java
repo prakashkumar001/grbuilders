@@ -1,5 +1,6 @@
 package com.site.siteproject.jaishree;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -9,10 +10,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -31,7 +34,7 @@ import java.util.ArrayList;
 
 public class DashBoard extends AppCompatActivity{
 
-    LinearLayout specification,viewPlans,jaishree_contactus;
+    LinearLayout specification,viewPlans,jaishree_contactus,location;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,7 @@ public class DashBoard extends AppCompatActivity{
         specification=(LinearLayout) findViewById(R.id.specification);
         viewPlans=(LinearLayout) findViewById(R.id.viewPlans);
         jaishree_contactus=(LinearLayout) findViewById(R.id.jaishree_contactus);
+        location= (LinearLayout) findViewById(R.id.location);
        intialFragment();
 
         specification.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +67,13 @@ public class DashBoard extends AppCompatActivity{
                 loadFragment(contactUS);
             }
         });
+
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showInfoDialog();
+            }
+        });
     }
 
 
@@ -81,6 +92,38 @@ public class DashBoard extends AppCompatActivity{
     }
 
 
+    public void showInfoDialog() {
 
+        // custom dialog
+        final Dialog dialog = new Dialog(DashBoard.this, R.style.DialogSlideAnim);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.map);
+        dialog.getWindow().setGravity(Gravity.CENTER);
+        //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
+        DisplayMetrics metrics = getResources().getDisplayMetrics();
+        int width = metrics.widthPixels;
+        int height = metrics.heightPixels;
+        dialog.show();
+        dialog.getWindow().setLayout((8 * width) / 10, (8 * height) / 10);
+
+        ImageView imageView=(ImageView)dialog.findViewById(R.id.image);
+        ImageView close=(ImageView)dialog.findViewById(R.id.close);
+
+        imageView.setImageResource(R.drawable.jaishree_map);
+
+
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+
+        dialog.show();
+
+
+    }
     }
 
