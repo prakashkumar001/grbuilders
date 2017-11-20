@@ -139,29 +139,30 @@ public class Home extends Fragment {
 
                 }*/
 
-                if(position==0)
+
+                if(position<=1)
                 {
                     radioGroup.check(position);
 
+                 /*   for(int i=2;i<floor.size()+2;i++)
+                    {
+                        RadioButton radioButton=(RadioButton)radioGroup2.findViewById(i);
+                        radioButton.setChecked(false);
+                    }
 
-                }else if(position==1)
-                {
-                    radioGroup.check(position);
-
-
-                }else if(position==2)
-                {
-                    radioGroup2.check(position);
+*/
 
 
-                }else if(position==3)
+                }else if(position>1)
                 {
                     radioGroup2.check(position);
 
+                   /* for(int i=0;i<views.size();i++)
+                    {
+                        RadioButton radioButton=(RadioButton)radioGroup.findViewById(i);
+                        radioButton.setChecked(false);
+                    }*/
 
-                }else if(position==4)
-                {
-                    radioGroup2.check(position);
 
                 }
 

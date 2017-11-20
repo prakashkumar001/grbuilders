@@ -123,6 +123,31 @@ public class Home extends Fragment {
             @Override
             public void onPageSelected(int position) {
 
+                if(position<=0)
+                {
+                    radioGroup.check(position);
+
+                 /*   for(int i=1;i<floor.size()+1;i++)
+                    {
+                        RadioButton radioButton=(RadioButton)radioGroup2.findViewById(i);
+                        radioButton.setChecked(false);
+                    }
+
+*/
+
+
+                }else if(position>0)
+                {
+                    radioGroup2.check(position);
+
+                  /*  for(int i=0;i<views.size();i++)
+                    {
+                        RadioButton radioButton=(RadioButton)radioGroup.findViewById(i);
+                        radioButton.setChecked(false);
+                    }*/
+
+
+                }
 
 
                /* if(position>3)
@@ -134,7 +159,7 @@ public class Home extends Fragment {
 
                 }*/
 
-                if(position==0)
+              /*  if(position==0)
                 {
                     radioGroup.check(position);
 
@@ -159,7 +184,7 @@ public class Home extends Fragment {
                     radioGroup2.check(position);
 
                 }
-
+*/
 
 
 

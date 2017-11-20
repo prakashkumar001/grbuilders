@@ -26,6 +26,7 @@
             android:layout_height="0dp" />
 
         <EditText
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:background="@drawable/editext_white_bg"
@@ -53,6 +54,7 @@
             android:layout_height="0dp" />
 
         <EditText
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:background="@drawable/editext_white_bg"
@@ -85,6 +87,7 @@
             android:layout_height="0dp" />
 
         <EditText
+            android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:background="@drawable/editext_white_bg"
@@ -103,5 +106,17 @@
             android:orientation="vertical"
             >
             </LinearLayout>
+
+
 </LinearLayout>
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:ems="10"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:textColor="@android:color/white"
+        android:text="Interested"
+        android:background="@drawable/jaishree_interset_bg"
+        />
 </LinearLayout>
