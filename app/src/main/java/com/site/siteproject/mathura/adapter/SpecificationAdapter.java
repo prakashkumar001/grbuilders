@@ -26,8 +26,9 @@ public class SpecificationAdapter extends RecyclerView.Adapter<SpecificationAdap
     Dialog dialog;
 
     int[] res = {
-            R.drawable.jaishree_spec1,R.drawable.jaishree_spec2,R.drawable.jaishree_spec3,R.drawable.jaishree_spec4,R.drawable.jaishree_spec5,R.drawable.jaishree_spec6};
-    String[] contents={"Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg","Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg","Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg","Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg","Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg","Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg"};
+            R.drawable.ailis_spec1,R.drawable.ailis_spec2,R.drawable.ailis_spec3,R.drawable.ailis_spec4,R.drawable.ailis_spec5,R.drawable.ailis_spec6,R.drawable.ailis_spec7,R.drawable.ailis_spec_10,R.drawable.ailis_spec8,R.drawable.ailis_spec9};
+    String[] contents={"Framed Structure with RCC column beams over brick masonry walls of 9 inches and 4.5 inches walls plastered and finished with cement paint internally and externally.","Kitchen platform will be polished granite with a single bowl stainless steel sink and glazed tiles dado of 2’0” feet above the kitchen platform, 3’0” feet dado in utility area (if provided).","Living, Dining and bed room area will be finished with good quality Vitrified Tiles of Builders choice with necessary skirting.","Living ,Dining and bed rooms walls will be finished with emulsion paint. ceiling will be finished with cement paint.","Walls will be covered with ceramic tiles as per Builder’s choice upto a height of 7 feet. Concealed / open plumbing lines from the overhead tank will be provided.","Three phases supply with manual phase changer will be provided for each flat. One calling bell point will be provided. Provision for UPS wiring will be provided.","Doors to the bedrooms will be provided with cylindrical locks. Door and frame will not be provided for kitchen.","One common bore wells and one sump will be provided. One pump for Bore well and one pump for sump will be provided.","Steel grills (painted) will be provided in all windows and Ventilators. Windows & Ventilators will be of good quality Aluminum.","One individual letterbox will be provided at the entrance to the building. Concealed PVC pipes for TV antenna will be provided in the living room and bedrooms."};
+    String[] titles={"Type of Construction","Kitchen","Flooring","Painting","Plumbing and Sanitary","Electrical","Doors","Water Supply","Windows and Ventilators","General"};
 
     public SpecificationAdapter(Activity context) {
 
@@ -50,7 +51,7 @@ public class SpecificationAdapter extends RecyclerView.Adapter<SpecificationAdap
     public void onBindViewHolder(SpecificationAdapter.MyViewHolder holder, final int position) {
         holder.layout.setImageResource(res[position]);
         holder.content.setText(contents[position]);
-        holder.tv_learnmore_quest.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showInfoDialog(position);

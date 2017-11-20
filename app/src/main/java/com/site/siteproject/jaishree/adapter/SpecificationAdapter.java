@@ -33,8 +33,14 @@ public class SpecificationAdapter  extends RecyclerView.Adapter<SpecificationAda
     Dialog dialog;
 
     int[] res = {
-            R.drawable.jaishree_spec1,R.drawable.jaishree_spec2,R.drawable.jaishree_spec3,R.drawable.jaishree_spec4,R.drawable.jaishree_spec5,R.drawable.jaishree_spec6};
-    String[] contents={"Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg","Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg","Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg","Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg","Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg","Loren Lipsum hgfhasguhasgjhdfasgjhdfgasjhg"};
+            R.drawable.ailis_spec1,R.drawable.ailis_spec2,R.drawable.ailis_spec3,R.drawable.ailis_spec4,R.drawable.ailis_spec5,R.drawable.ailis_spec6,R.drawable.ailis_spec7,R.drawable.ailis_spec_10,R.drawable.ailis_spec8,R.drawable.ailis_spec9};
+    String[] contents={"Framed structure with RCC column beams over masonry walls of 8 inches and 4 inches walls plastered and paint finished | Ceiling height will be 9-6” feet approximately except in the toilet where it will be 8’-6”."
+            ,"Kitchen platform will be polished granite with a single bowl stainless steel sink and glazed tiles","Living, dining and bedroom area will be finished with good quality 2X2 vitrified tiles of builder’s choice with necessary skirting. | Ceramic flooring in the toilet will be provided as builder’s choice.","Concealed / open pluming line from the overhead tank will be provided | All closets and washbasins will be of white color as per builder’s choice | Provision in plumbing for connection one geyser in each toilet.","Concealed copper wiring suitable for three-phase supply, will be of ISI quality | Switches & sockets with adequate points for light, fan and power supply will be provided. | Separate meter for lighting in common areas and pumps.","Main doorframe be of teak and door shutter will be of good quality imported skin, finished with lacquer varnish. | Other doors will be with good quality wood frame and flush doors painted on both side.","Living , dining and bedrooms walls will be finished with emulsion paint. | Ceiling will be finished with cement paint | All wooden frames, shutters and M.S. Grill will be finished with enamel paint.","Two Common bore wells and one sump will be provided | Two pump for bore well and one pump for sump will be provided.",
+         "Steel grills (painted) Will be provided in all windows and ventilators. | Windows will be of well seasoned country wood. | Ventilators will be good quality wood frame with glass louvers.","Anti-termite treatment | Aqua guard point in kitchen | Automatic water level controller for pumps will be provided | One individual letterbox will be provided at the entrance to the building."};
+
+
+
+    String[] titles={"Type of Construction","Kitchen","Flooring","Painting","Plumbing and Sanitary","Electrical","Doors","Water Supply","Windows and Ventilators","General"};
 
     public SpecificationAdapter(Activity context) {
 
@@ -57,7 +63,9 @@ public class SpecificationAdapter  extends RecyclerView.Adapter<SpecificationAda
     public void onBindViewHolder(SpecificationAdapter.MyViewHolder holder, final int position) {
         holder.layout.setImageResource(res[position]);
         holder.content.setText(contents[position]);
-        holder.tv_learnmore_quest.setOnClickListener(new View.OnClickListener() {
+        holder.title.setText(titles[position]);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showInfoDialog(position);
@@ -75,13 +83,15 @@ public class SpecificationAdapter  extends RecyclerView.Adapter<SpecificationAda
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView layout;
-        TextView content,tv_learnmore_quest;
+        TextView content,tv_learnmore_quest,title;
 
         public MyViewHolder(View view) {
             super(view);
 
             layout=(ImageView)itemView.findViewById(R.id.image);
             content=(TextView) itemView.findViewById(R.id.content);
+            title=(TextView) itemView.findViewById(R.id.title);
+
             tv_learnmore_quest=(TextView) itemView.findViewById(R.id.tv_learnmore_quest);
 
 
@@ -104,7 +114,7 @@ public class SpecificationAdapter  extends RecyclerView.Adapter<SpecificationAda
         dialog.show();
         dialog.getWindow().setLayout((8 * width) / 10, (8 * height) / 10);
 
-       ImageView imageView=(ImageView)dialog.findViewById(R.id.image);
+        ImageView imageView=(ImageView)dialog.findViewById(R.id.image);
         ImageView close=(ImageView)dialog.findViewById(R.id.close);
         TextView content=(TextView) dialog.findViewById(R.id.content);
         imageView.setImageResource(res[position]);
