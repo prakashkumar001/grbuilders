@@ -17,6 +17,9 @@ import android.widget.EditText;
 import com.site.siteproject.R;
 import com.site.siteproject.utils.WSUtils;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 
 /**
@@ -91,16 +94,32 @@ public class ContactUS extends Fragment {
                 dialog.dismiss();
                 super.onPostExecute(s);
 
-                if(!s.equalsIgnoreCase("null") || s!=null)
-                {
+                if (!s.equalsIgnoreCase("null") || s != null) {
 
-                    successDialog();
+
+                    try {
+                        JSONObject object=new JSONObject(s);
+                        String status=object.getString("status");
+                        if(status.equalsIgnoreCase("success"))
+                        {
+                            successDialog("Mail Sent successfully");
+
+                        }else
+                        {
+                            successDialog("Mail Sending Failed");
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
                 }
 
             }
-        } new SyncServer().execute();
+        }
+        new SyncServer().execute();
     }
-    void successDialog() {
+
+    void successDialog(String message) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 getActivity());
 
@@ -109,9 +128,9 @@ public class ContactUS extends Fragment {
 
         // set dialog message
         alertDialogBuilder
-                .setMessage("Successfully send to the mail")
+                .setMessage(message)
                 .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // if this button is clicked, close
                         // current activity
@@ -127,5 +146,4 @@ public class ContactUS extends Fragment {
         alertDialog.show();
 
     }
-
     }

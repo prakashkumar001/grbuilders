@@ -16,6 +16,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.site.siteproject.R;
+import com.site.siteproject.utils.ExtendedViewPager;
 import com.site.siteproject.utils.TouchImageView;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class Home extends Fragment {
     ArrayList<String> floor;
     ArrayList<String> views;
     RadioGroup radioGroup,radioGroup2;
-    ViewPager viewPager;
+    ExtendedViewPager viewPager;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -256,7 +257,7 @@ public class Home extends Fragment {
     {
         radioGroup= (RadioGroup) view.findViewById(R.id.views);
         radioGroup2= (RadioGroup) view.findViewById(R.id.floors);
-        viewPager = (ViewPager)view. findViewById(R.id.viewpager);
+        viewPager = (ExtendedViewPager)view. findViewById(R.id.viewpager);
 
         flatintialise();
 

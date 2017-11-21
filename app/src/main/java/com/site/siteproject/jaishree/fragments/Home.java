@@ -11,12 +11,12 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.site.siteproject.R;
+import com.site.siteproject.utils.ExtendedViewPager;
 import com.site.siteproject.utils.TouchImageView;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class Home extends Fragment {
 
     ArrayList<String> flatnames;
     RadioGroup radioGroup;
-    ViewPager viewPager;
+    ExtendedViewPager viewPager;
     RadioButton radioButton;
     @Nullable
     @Override
@@ -168,7 +168,7 @@ public class Home extends Fragment {
     void init(View view)
     {
         radioGroup= (RadioGroup) view.findViewById(R.id.rg_header);
-        viewPager = (ViewPager)view. findViewById(R.id.viewpager);
+        viewPager = (ExtendedViewPager)view. findViewById(R.id.viewpager);
 
         flatintialise();
 

@@ -97,7 +97,21 @@ public class ContactUS extends Fragment {
 
                 if (!s.equalsIgnoreCase("null") || s != null) {
 
-                    successDialog();
+
+                    try {
+                        JSONObject object=new JSONObject(s);
+                        String status=object.getString("status");
+                        if(status.equalsIgnoreCase("success"))
+                        {
+                            successDialog("Mail Sent successfully");
+
+                        }else
+                        {
+                            successDialog("Mail Sending Failed");
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
                 }
 
@@ -106,7 +120,7 @@ public class ContactUS extends Fragment {
         new SyncServer().execute();
     }
 
-    void successDialog() {
+    void successDialog(String message) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 getActivity());
 
@@ -115,9 +129,9 @@ public class ContactUS extends Fragment {
 
         // set dialog message
         alertDialogBuilder
-                .setMessage("Successfully send to the mail")
+                .setMessage(message)
                 .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // if this button is clicked, close
                         // current activity

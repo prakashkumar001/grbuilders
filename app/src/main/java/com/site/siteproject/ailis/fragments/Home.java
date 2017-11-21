@@ -9,19 +9,15 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.LinearInterpolator;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 
 
 import com.site.siteproject.R;
+import com.site.siteproject.utils.ExtendedViewPager;
 import com.site.siteproject.utils.TouchImageView;
 
 import java.util.ArrayList;
@@ -35,7 +31,7 @@ public class Home extends Fragment {
     ArrayList<String> floor;
     ArrayList<String> views;
     RadioGroup radioGroup,radioGroup2;
-    ViewPager viewPager;
+    ExtendedViewPager viewPager;
 
     @Nullable
     @Override
@@ -211,7 +207,7 @@ public class Home extends Fragment {
 
 
 
-            collection.addView(layout);
+            collection.addView(layout, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
             return layout;
         }
 
@@ -246,7 +242,7 @@ public class Home extends Fragment {
     {
         radioGroup= (RadioGroup) view.findViewById(R.id.view);
         radioGroup2= (RadioGroup) view.findViewById(R.id.floor);
-        viewPager = (ViewPager)view. findViewById(R.id.viewpager);
+        viewPager = (ExtendedViewPager)view. findViewById(R.id.viewpager);
 
         flatintialise();
 
