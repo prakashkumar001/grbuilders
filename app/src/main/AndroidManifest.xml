@@ -10,7 +10,7 @@
         android:roundIcon="@drawable/nahar_app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MainActivity"
+        <activity android:name=".MainSplash"
             android:screenOrientation="landscape"
 
             >
@@ -20,6 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity"
+            android:screenOrientation="landscape"
+            />
 
         <activity android:name=".ailis.Splash"
             android:screenOrientation="landscape"
@@ -58,6 +62,29 @@
             android:screenOrientation="landscape"
             />
 
+
+        <activity android:name=".ailis.fragments.ContactUS"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustResize"
+
+            />
+        <activity android:name=".thiruvidanthai.fragments.ContactUS"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustResize"
+
+            />
+        <activity android:name=".jaishree.fragments.ContactUS"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustResize"
+
+            />
+        <activity android:name=".mathura.fragments.ContactUS"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustResize"
+            />
+        <activity android:name=".AboutUs"
+            android:screenOrientation="landscape"
+            />
     </application>
 
 </manifest>

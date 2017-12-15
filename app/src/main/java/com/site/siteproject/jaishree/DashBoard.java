@@ -2,9 +2,11 @@ package com.site.siteproject.jaishree;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.PagerAdapter;
@@ -21,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.site.siteproject.MainActivity;
 import com.site.siteproject.R;
 import com.site.siteproject.jaishree.fragments.ContactUS;
 import com.site.siteproject.jaishree.fragments.Home;
@@ -63,8 +66,8 @@ public class DashBoard extends AppCompatActivity{
         jaishree_contactus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ContactUS contactUS=new ContactUS();
-                loadFragment(contactUS);
+               /* ContactUS contactUS=new ContactUS();
+                loadFragment(contactUS);*/
             }
         });
 
@@ -125,5 +128,13 @@ public class DashBoard extends AppCompatActivity{
 
 
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i=new Intent(com.site.siteproject.jaishree.DashBoard.this, MainActivity.class);
+        startActivity(i);
+        ActivityCompat.finishAffinity(com.site.siteproject.jaishree.DashBoard.this);
+    }
+
     }
 

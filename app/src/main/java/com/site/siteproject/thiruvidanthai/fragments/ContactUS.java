@@ -1,4 +1,4 @@
-package com.site.siteproject.jaishree.fragments;
+package com.site.siteproject.thiruvidanthai.fragments;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -7,13 +7,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -37,6 +34,7 @@ public class ContactUS extends AppCompatActivity {
     Button submit;
     String names,emails,phone;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +44,7 @@ public class ContactUS extends AppCompatActivity {
         phone_number=(EditText)findViewById(R.id.phone);
         submit=(Button)findViewById(R.id.submit);
 
-        submit.setBackgroundResource(R.drawable.jaishree_interset_bg);
-
+        submit.setBackgroundResource(R.drawable.mathur_interestbg);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,7 +64,8 @@ public class ContactUS extends AppCompatActivity {
 
     }
 
-  
+
+
     void sendEmailtoCustomer() {
         class SyncServer extends AsyncTask<String, Void, String> {
 
@@ -90,7 +88,7 @@ public class ContactUS extends AppCompatActivity {
                 data.put("name",names);
                 data.put("email",emails);
                 data.put("mobile",phone);
-                data.put("project","jaishree");
+                data.put("project","thiruvidanthai");
 
 
                 response = new WSUtils().getResultFromHttpRequest("http://www.passinovat.com/demo/tab.php", "POST", data);
@@ -105,21 +103,18 @@ public class ContactUS extends AppCompatActivity {
                 dialog.dismiss();
                 super.onPostExecute(s);
 
-                if (s==null) {
+                if (s == null) {
 
                     successDialog("Mail Sending Failed");
 
-                }else
-                {
+                } else {
                     try {
-                        JSONObject object=new JSONObject(s);
-                        String status=object.getString("status");
-                        if(status.equalsIgnoreCase("success"))
-                        {
+                        JSONObject object = new JSONObject(s);
+                        String status = object.getString("status");
+                        if (status.equalsIgnoreCase("success")) {
                             successDialog("Mail Sent successfully");
 
-                        }else
-                        {
+                        } else {
                             successDialog("Mail Sending Failed");
                         }
                     } catch (JSONException e) {
@@ -127,7 +122,6 @@ public class ContactUS extends AppCompatActivity {
                     }
 
                 }
-
             }
         }
         new SyncServer().execute();
@@ -146,12 +140,12 @@ public class ContactUS extends AppCompatActivity {
                 .setCancelable(false)
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        // if ContactUS.this button is clicked, close
+                        // if this button is clicked, close
                         // current activity
 
                         dialog.dismiss();
 
-                        Intent i=new Intent(getApplicationContext(), com.site.siteproject.jaishree.DashBoard.class);
+                        Intent i=new Intent(getApplicationContext(), DashBoard.class);
                         startActivity(i);
                         finish();
                     }
@@ -165,11 +159,12 @@ public class ContactUS extends AppCompatActivity {
 
     }
 
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent i=new Intent(com.site.siteproject.jaishree.fragments.ContactUS.this, MainActivity.class);
+        Intent i=new Intent(com.site.siteproject.thiruvidanthai.fragments.ContactUS.this, MainActivity.class);
         startActivity(i);
-        ActivityCompat.finishAffinity(com.site.siteproject.jaishree.fragments.ContactUS.this);
+        ActivityCompat.finishAffinity(com.site.siteproject.thiruvidanthai.fragments.ContactUS.this);
     }
     }

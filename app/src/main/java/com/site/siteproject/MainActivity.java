@@ -1,11 +1,19 @@
 package com.site.siteproject;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.site.siteproject.thiruvidanthai.Splash;
 
@@ -71,5 +79,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i=new Intent(MainActivity.this, MainSplash.class);
+        startActivity(i);
+        ActivityCompat.finishAffinity(MainActivity.this);
     }
 }

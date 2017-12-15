@@ -1,14 +1,22 @@
 package com.site.siteproject.mathura;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.site.siteproject.R;
+import com.site.siteproject.ailis.adapter.about_us_adapter;
 import com.site.siteproject.jaishree.*;
 
 /**
@@ -36,15 +44,15 @@ import com.site.siteproject.jaishree.*;
           new Handler().postDelayed(new Runnable() {
                 public void run() {
 
-                    Splash.this.finish();
+                    com.site.siteproject.mathura.Splash.this.finish();
                     overridePendingTransition(R.anim.fadeinact,
                             R.anim.fadeoutact);
 
                     Intent mainIntent = new Intent(
-                            Splash.this,
-                            com.site.siteproject.mathura.DashBoard.class);
+                            com.site.siteproject.mathura.Splash.this,
+                            com.site.siteproject.mathura.fragments.ContactUS.class);
 
-                    Splash.this.startActivity(mainIntent);
+                    com.site.siteproject.mathura.Splash.this.startActivity(mainIntent);
 
 
 

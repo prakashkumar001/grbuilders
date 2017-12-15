@@ -1,8 +1,10 @@
 package com.site.siteproject.mathura;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.site.siteproject.MainActivity;
 import com.site.siteproject.R;
 import com.site.siteproject.mathura.fragments.ContactUS;
 import com.site.siteproject.mathura.fragments.Specification;
@@ -52,8 +55,8 @@ public class DashBoard extends AppCompatActivity{
         contactus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ContactUS contactUS=new ContactUS();
-                loadFragment(contactUS);
+              /*  ContactUS contactUS=new ContactUS();
+                loadFragment(contactUS);*/
             }
         });
         location.setOnClickListener(new View.OnClickListener() {
@@ -111,6 +114,14 @@ public class DashBoard extends AppCompatActivity{
         dialog.show();
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i=new Intent(com.site.siteproject.mathura.DashBoard.this, MainActivity.class);
+        startActivity(i);
+        ActivityCompat.finishAffinity(com.site.siteproject.mathura.DashBoard.this);
     }
 
 }

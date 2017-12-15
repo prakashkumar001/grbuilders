@@ -2,19 +2,25 @@ package com.site.siteproject.ailis.fragments;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.site.siteproject.MainActivity;
 import com.site.siteproject.R;
+import com.site.siteproject.thiruvidanthai.DashBoard;
 import com.site.siteproject.utils.WSUtils;
 
 import org.json.JSONException;
@@ -26,38 +32,46 @@ import java.util.HashMap;
  * Created by Creative IT Works on 15-Nov-17.
  */
 
-public class ContactUS extends Fragment {
+public class ContactUS extends AppCompatActivity {
     EditText name, email, phone_number;
     Button submit;
     String names, emails, phone;
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.jaishree_contactus, container, false);
-        name = (EditText) view.findViewById(R.id.name);
-        email = (EditText) view.findViewById(R.id.email);
-        phone_number = (EditText) view.findViewById(R.id.phone);
-        submit = (Button) view.findViewById(R.id.submit);
+        @Override
+        protected void onCreate(@Nullable Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.jaishree_contactus);
+            name = (EditText) findViewById(R.id.name);
+            email = (EditText)findViewById(R.id.email);
+            phone_number = (EditText) findViewById(R.id.phone);
+            submit = (Button) findViewById(R.id.submit);
 
-        submit.setBackgroundResource(R.drawable.ailis_interestbg);
+            submit.setBackgroundResource(R.drawable.ailis_interestbg);
 
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            submit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-                names = name.getText().toString();
-                emails = email.getText().toString();
-                phone = phone_number.getText().toString();
-                sendEmailtoCustomer();
-            }
-        });
+                    names = name.getText().toString();
+                    emails = email.getText().toString();
+                    phone = phone_number.getText().toString();
+
+                    if(name.getText().toString().length()>0 && email.getText().toString().length()>0 && phone_number.getText().toString().length()>0)
+                    {
+                        sendEmailtoCustomer();
+                    }else
+                    {
+                        Toast.makeText(getApplicationContext(),"Please Fill all Fields",Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+            });
+
+        }
 
 
-        return view;
 
-    }
 
     void sendEmailtoCustomer() {
         class SyncServer extends AsyncTask<String, Void, String> {
@@ -67,8 +81,9 @@ public class ContactUS extends Fragment {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                dialog = new ProgressDialog(getActivity());
+                dialog = new ProgressDialog(ContactUS.this);
                 dialog.setMessage("Loading...");
+                dialog.setCancelable(false);
                 dialog.show();
             }
 
@@ -95,9 +110,12 @@ public class ContactUS extends Fragment {
                 dialog.dismiss();
                 super.onPostExecute(s);
 
-                if (!s.equalsIgnoreCase("null") || s != null) {
+                if (s==null) {
 
+                    successDialog("Mail Sending Failed");
 
+                }else
+                {
                     try {
                         JSONObject object=new JSONObject(s);
                         String status=object.getString("status");
@@ -122,7 +140,7 @@ public class ContactUS extends Fragment {
 
     void successDialog(String message) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                getActivity());
+                ContactUS.this);
 
         // set title
         alertDialogBuilder.setTitle("Alert");
@@ -137,6 +155,10 @@ public class ContactUS extends Fragment {
                         // current activity
 
                         dialog.dismiss();
+
+                        Intent i=new Intent(getApplicationContext(), com.site.siteproject.ailis.DashBoard.class);
+                        startActivity(i);
+                        finish();
                     }
                 });
 
@@ -146,6 +168,14 @@ public class ContactUS extends Fragment {
         // show it
         alertDialog.show();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i=new Intent(com.site.siteproject.ailis.fragments.ContactUS.this, MainActivity.class);
+        startActivity(i);
+        ActivityCompat.finishAffinity(com.site.siteproject.ailis.fragments.ContactUS.this);
     }
 
     }

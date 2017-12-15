@@ -46,7 +46,7 @@
     <style name="DialogSlideAnim" parent="Base.Theme.AppCompat.Light.Dialog">
         <item name="android:windowAnimationStyle">@style/DialogTheme</item>
         <item name="android:windowFrame">@null</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--<item name="android:windowBackground">@android:color/transparent</item>-->
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowTitleStyle">@null</item>

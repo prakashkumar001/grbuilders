@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:background="#EFEFEF"
+    android:background="@drawable/contact_bg"
+    android:gravity="center"
     android:layout_height="match_parent">
 
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:orientation="vertical"
         >
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="1"
-        android:layout_height="100dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
         >
 
@@ -23,13 +25,16 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:text="Name"
+            android:textColor="@android:color/white"
+
             android:layout_height="0dp" />
 
         <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:inputType="text"
+            android:layout_weight="2"
+            android:textColor="@android:color/black"
+
             android:background="@drawable/editext_white_bg"
             android:layout_height="0dp" />
 
@@ -42,9 +47,9 @@
             android:layout_height="wrap_content" />
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="1"
-        android:layout_height="100dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
         >
 
@@ -52,48 +57,17 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:text="Email-ID"
+            android:textColor="@android:color/white"
+
             android:layout_height="0dp" />
 
         <EditText
             android:id="@+id/email"
+
             android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:inputType="textEmailAddress"
+            android:layout_weight="2"
+            android:textColor="@android:color/black"
 
-            android:background="@drawable/editext_white_bg"
-            android:layout_height="0dp" />
-
-
-    </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-
-        android:orientation="horizontal"
-        >
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="100dp"
-        android:orientation="vertical"
-        >
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:text="Phone"
-            android:layout_height="0dp" />
-
-        <EditText
-            android:id="@+id/phone"
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:inputType="number"
             android:background="@drawable/editext_white_bg"
             android:layout_height="0dp" />
 
@@ -103,24 +77,46 @@
             android:layout_width="0dp"
             android:layout_weight=".1"
             android:layout_height="wrap_content" />
+
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:orientation="vertical"
             >
-            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:text="Phone"
+                android:textColor="@android:color/white"
+                android:layout_height="0dp" />
+
+            <EditText
+                android:id="@+id/phone"
+
+                android:layout_width="match_parent"
+                android:layout_weight="2"
+                android:textColor="@android:color/black"
+
+                android:background="@drawable/editext_white_bg"
+                android:layout_height="0dp" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/jaishree_interset_bg"
+            android:text="Interested"
+            />
 
 
 </LinearLayout>
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:ems="10"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:textColor="@android:color/white"
-        android:text="Interested"
-        android:background="@drawable/jaishree_interset_bg"
-        />
 </LinearLayout>

@@ -1,8 +1,10 @@
 package com.site.siteproject.ailis;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
@@ -17,6 +19,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.site.siteproject.AboutUs;
+import com.site.siteproject.MainActivity;
+import com.site.siteproject.MainSplash;
 import com.site.siteproject.R;
 import com.site.siteproject.ailis.fragments.ContactUS;
 import com.site.siteproject.ailis.fragments.Specification;
@@ -62,8 +67,8 @@ public class DashBoard extends AppCompatActivity {
         contactus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ContactUS contactUS = new ContactUS();
-                loadFragment(contactUS);
+                /*ContactUS contactUS = new ContactUS();
+                loadFragment(contactUS);*/
             }
         });
 
@@ -121,5 +126,13 @@ public class DashBoard extends AppCompatActivity {
         dialog.show();
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i=new Intent(DashBoard.this, MainActivity.class);
+        startActivity(i);
+        ActivityCompat.finishAffinity(DashBoard.this);
     }
 }
