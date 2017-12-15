@@ -7,7 +7,7 @@
 
 
     <LinearLayout
-        android:layout_width="350dp"
+        android:layout_width="600dp"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:layout_gravity="center"
@@ -17,26 +17,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_weight="1"
+        android:layout_margin="10dp"
         android:layout_height="0dp"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         >
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_weight="1"
             android:text="Name"
             android:textColor="@android:color/white"
-
-            android:layout_height="0dp" />
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/name"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_weight="2"
             android:textColor="@android:color/black"
+            android:textSize="20dp"
 
             android:background="@drawable/editext_white_bg"
-            android:layout_height="0dp" />
+            android:layout_height="wrap_content" />
 
 
     </LinearLayout>
@@ -49,27 +52,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_weight="1"
+        android:layout_margin="10dp"
+
         android:layout_height="0dp"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         >
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_weight="1"
             android:text="Email-ID"
+            android:gravity="center"
+            android:textSize="20dp"
+
             android:textColor="@android:color/white"
 
-            android:layout_height="0dp" />
+            android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/email"
+            android:textSize="20dp"
 
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_weight="2"
             android:textColor="@android:color/black"
-
+            android:inputType="textEmailAddress"
             android:background="@drawable/editext_white_bg"
-            android:layout_height="0dp" />
+            android:layout_height="wrap_content" />
 
 
     </LinearLayout>
@@ -82,25 +91,31 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="0dp"
-            android:orientation="vertical"
+            android:layout_margin="10dp"
+
+            android:orientation="horizontal"
             >
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_weight="1"
                 android:text="Phone"
+                android:textSize="20dp"
+
+                android:gravity="center"
                 android:textColor="@android:color/white"
-                android:layout_height="0dp" />
+                android:layout_height="wrap_content" />
 
             <EditText
                 android:id="@+id/phone"
-
-                android:layout_width="match_parent"
+                android:maxLength="10"
+                android:layout_width="0dp"
                 android:layout_weight="2"
                 android:textColor="@android:color/black"
-
+                android:textSize="20dp"
+                android:inputType="phone"
                 android:background="@drawable/editext_white_bg"
-                android:layout_height="0dp" />
+                android:layout_height="wrap_content" />
 
 
         </LinearLayout>

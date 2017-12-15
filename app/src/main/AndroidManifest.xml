@@ -65,22 +65,22 @@
 
         <activity android:name=".ailis.fragments.ContactUS"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="adjustResize"
+            android:windowSoftInputMode="adjustPan"
 
             />
         <activity android:name=".thiruvidanthai.fragments.ContactUS"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="adjustResize"
+            android:windowSoftInputMode="adjustPan"
 
             />
         <activity android:name=".jaishree.fragments.ContactUS"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="adjustResize"
+            android:windowSoftInputMode="adjustPan"
 
             />
         <activity android:name=".mathura.fragments.ContactUS"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="adjustResize"
+            android:windowSoftInputMode="adjustPan"
             />
         <activity android:name=".AboutUs"
             android:screenOrientation="landscape"
