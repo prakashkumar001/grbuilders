@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.site.siteproject.MainActivity;
+import com.site.siteproject.NaharContact;
 import com.site.siteproject.R;
 import com.site.siteproject.mathura.fragments.ContactUS;
 import com.site.siteproject.mathura.fragments.Specification;
@@ -55,8 +56,8 @@ public class DashBoard extends AppCompatActivity{
         contactus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              /*  ContactUS contactUS=new ContactUS();
-                loadFragment(contactUS);*/
+                NaharContact contactUS = new NaharContact();
+                loadFragment(contactUS);
             }
         });
         location.setOnClickListener(new View.OnClickListener() {

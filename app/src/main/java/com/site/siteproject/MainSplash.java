@@ -2,6 +2,7 @@ package com.site.siteproject;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -35,7 +36,7 @@ public class MainSplash extends AppCompatActivity {
         layout = (RelativeLayout) findViewById(R.id.linear);
         splashimg = (ImageView) findViewById(R.id.splash_logo);
 
-        layout.setBackgroundResource(R.drawable.logo_bg);
+        layout.setBackgroundResource(R.drawable.contact_bg);
         splashimg.setImageResource(R.drawable.nahar_logo);
 
 

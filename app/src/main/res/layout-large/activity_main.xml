@@ -27,8 +27,9 @@
             android:textColor="@android:color/white"
             android:gravity="center"
             android:textSize="20dp"
+            android:textStyle="bold"
             android:layout_margin="20dp"
-            android:text="SELECT YOUR PROJECT"
+            android:text="PROJECTS"
             />
 
 

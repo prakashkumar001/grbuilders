@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.site.siteproject.AboutUs;
 import com.site.siteproject.MainActivity;
 import com.site.siteproject.MainSplash;
+import com.site.siteproject.NaharContact;
 import com.site.siteproject.R;
 import com.site.siteproject.ailis.fragments.ContactUS;
 import com.site.siteproject.ailis.fragments.Specification;
@@ -67,8 +68,8 @@ public class DashBoard extends AppCompatActivity {
         contactus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*ContactUS contactUS = new ContactUS();
-                loadFragment(contactUS);*/
+                NaharContact contactUS = new NaharContact();
+                loadFragment(contactUS);
             }
         });
 
