@@ -26,6 +26,7 @@ import com.site.siteproject.NaharContact;
 import com.site.siteproject.R;
 import com.site.siteproject.ailis.fragments.ContactUS;
 import com.site.siteproject.ailis.fragments.Specification;
+import com.site.siteproject.ailis.fragments.Location;
 
 import java.util.ArrayList;
 
@@ -76,7 +77,9 @@ public class DashBoard extends AppCompatActivity {
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showInfoDialog();
+                Location contactUS = new Location();
+                loadFragment(contactUS);
+                //showInfoDialog();
             }
         });
     }

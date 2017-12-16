@@ -85,7 +85,7 @@ public class ContactUS extends AppCompatActivity {
             @Override
             protected String doInBackground(String[] params) {
 
-                String response = null;
+                String response = "";
                 HashMap<String,String> data=new HashMap<>();
                 data.put("name",names);
                 data.put("email",emails);

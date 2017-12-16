@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -25,19 +26,15 @@ import com.site.siteproject.ailis.adapter.about_us_adapter;
 
 public class MainSplash extends AppCompatActivity {
     final int SPLASH_DISPLAY_TIME = 2000;
-    RelativeLayout layout;
-    ImageView splashimg;
+
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash);
-        layout = (RelativeLayout) findViewById(R.id.linear);
-        splashimg = (ImageView) findViewById(R.id.splash_logo);
+        setContentView(R.layout.nahar_splash);
 
-        layout.setBackgroundResource(R.drawable.contact_bg);
-        splashimg.setImageResource(R.drawable.nahar_logo);
+
 
 
         new Handler().postDelayed(new Runnable() {
@@ -53,6 +50,10 @@ public class MainSplash extends AppCompatActivity {
         }, SPLASH_DISPLAY_TIME);
     }
 
-
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        ActivityCompat.finishAffinity(MainSplash.this);
+        System.exit(0);
+    }
 }

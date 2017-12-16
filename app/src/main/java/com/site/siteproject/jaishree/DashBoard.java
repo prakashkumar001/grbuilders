@@ -29,6 +29,7 @@ import com.site.siteproject.R;
 import com.site.siteproject.jaishree.fragments.ContactUS;
 import com.site.siteproject.jaishree.fragments.Home;
 import com.site.siteproject.jaishree.fragments.Specification;
+import com.site.siteproject.jaishree.fragments.Location;
 
 import java.util.ArrayList;
 
@@ -75,7 +76,9 @@ public class DashBoard extends AppCompatActivity{
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showInfoDialog();
+                Location contactUS = new Location();
+                loadFragment(contactUS);
+                //showInfoDialog();
             }
         });
     }

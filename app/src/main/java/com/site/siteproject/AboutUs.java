@@ -52,8 +52,7 @@ public class AboutUs extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent i=new Intent(AboutUs.this, MainSplash.class);
-        startActivity(i);
+
         ActivityCompat.finishAffinity(AboutUs.this);
     }
 }

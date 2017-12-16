@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import com.site.siteproject.MainActivity;
 import com.site.siteproject.NaharContact;
 import com.site.siteproject.R;
+import com.site.siteproject.thiruvidanthai.fragments.Location;
 import com.site.siteproject.thiruvidanthai.fragments.Specification;
 import com.site.siteproject.thiruvidanthai.fragments.Home;
 
@@ -62,7 +63,9 @@ public class DashBoard extends AppCompatActivity{
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showInfoDialog();
+                Location contactUS = new Location();
+                loadFragment(contactUS);
+                //showInfoDialog();
             }
         });
     }
