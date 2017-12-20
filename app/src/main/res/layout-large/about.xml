@@ -10,7 +10,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:src="@drawable/nahar_logo"
+        android:src="@drawable/nahar_logos"
         />
     <!--<TextView
         android:layout_width="wrap_content"
@@ -53,13 +53,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             >
 
 
             <TextView
                 android:id="@+id/web"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_weight=".7"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -72,7 +72,7 @@
 
             <TextView
                 android:id="@+id/phone"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -101,6 +101,8 @@
         android:id="@+id/continues"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:background="@drawable/nahar_selector_color"
         android:text="Continue"
         />
 

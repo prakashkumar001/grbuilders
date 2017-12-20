@@ -17,6 +17,7 @@ import android.widget.RadioGroup;
 
 import com.site.siteproject.R;
 import com.site.siteproject.utils.ExtendedViewPager;
+import com.site.siteproject.utils.GlobalClass;
 import com.site.siteproject.utils.TouchImageView;
 
 import java.util.ArrayList;
@@ -31,11 +32,13 @@ public class Home extends Fragment {
     RadioGroup radioGroup;
     ExtendedViewPager viewPager;
     RadioButton radioButton;
+    GlobalClass global;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.home_jaishree, container, false);
+        global=(GlobalClass)getActivity().getApplicationContext();
         flatnames=new ArrayList<>();
         flatnames.add("FLAT -1A");
         flatnames.add("FLAT -1B");
@@ -76,6 +79,8 @@ public class Home extends Fragment {
             radioButton.setTextColor(getResources().getColorStateList(R.color.rbtn_textcolor_selector));
             radioButton.setButtonDrawable(null);
             radioButton.setBackgroundResource(R.drawable.jaishree_radio);
+            global.setTypeface(radioButton);
+
             rprms = new RadioGroup.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f);
             radioGroup.addView(radioButton, rprms);
 

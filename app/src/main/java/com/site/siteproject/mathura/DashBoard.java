@@ -14,13 +14,16 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.site.siteproject.MainActivity;
 import com.site.siteproject.NaharContact;
 import com.site.siteproject.R;
+import com.site.siteproject.ailis.fragments.FloorPlan;
 import com.site.siteproject.mathura.fragments.ContactUS;
 import com.site.siteproject.mathura.fragments.Specification;
 import com.site.siteproject.mathura.fragments.Location;
+import com.site.siteproject.utils.GlobalClass;
 
 
 /**
@@ -28,15 +31,35 @@ import com.site.siteproject.mathura.fragments.Location;
  */
 
 public class DashBoard extends AppCompatActivity{
-    LinearLayout specification,viewPlans,contactus,location;
+    LinearLayout specification,viewPlans,contactus,location,floorPlans;
+    TextView elevation_text,location_text,specification_text,rate_text,contact_text,floor_text;
+    GlobalClass global;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mathura_dashboard);
+
+        global=(GlobalClass)getApplicationContext();
         specification=(LinearLayout) findViewById(R.id.specification);
         viewPlans=(LinearLayout) findViewById(R.id.viewPlans);
         contactus=(LinearLayout) findViewById(R.id.contactus);
         location= (LinearLayout) findViewById(R.id.location);
+        floorPlans= (LinearLayout) findViewById(R.id.floorPlans);
+
+        elevation_text= (TextView) findViewById(R.id.elevation_text);
+        location_text= (TextView) findViewById(R.id.location_text);
+        specification_text= (TextView) findViewById(R.id.specification_text);
+        rate_text= (TextView) findViewById(R.id.rate_text);
+        contact_text= (TextView) findViewById(R.id.contact_text);
+        floor_text= (TextView) findViewById(R.id.floor_text);
+
+        global.setTypeface(elevation_text);
+        global.setTypeface(location_text);
+        global.setTypeface(specification_text);
+        global.setTypeface(rate_text);
+        global.setTypeface(contact_text);
+        global.setTypeface(floor_text);
+
         intialFragment();
 
         specification.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +88,14 @@ public class DashBoard extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Location contactUS = new Location();
+                loadFragment(contactUS);
+                //showInfoDialog();
+            }
+        });
+        floorPlans.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FloorPlan contactUS = new FloorPlan();
                 loadFragment(contactUS);
                 //showInfoDialog();
             }

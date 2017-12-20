@@ -42,16 +42,16 @@
             >
             <ImageView
                 android:id="@+id/thiruvidanthai"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/thiru_selector"
                 />
             <ImageView
                 android:id="@+id/ailis"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="20dp"
 
@@ -59,8 +59,8 @@
                 />
             <ImageView
                 android:id="@+id/jothi"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="20dp"
 
@@ -79,16 +79,16 @@
             >
             <ImageView
                 android:id="@+id/jaishree"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/jaishree_selector"
                 />
             <ImageView
                 android:id="@+id/mathura"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="20dp"
 

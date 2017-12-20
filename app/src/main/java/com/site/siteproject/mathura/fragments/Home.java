@@ -14,9 +14,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.site.siteproject.R;
 import com.site.siteproject.utils.ExtendedViewPager;
+import com.site.siteproject.utils.GlobalClass;
 import com.site.siteproject.utils.TouchImageView;
 
 import java.util.ArrayList;
@@ -27,23 +29,21 @@ import java.util.ArrayList;
 
 public class Home extends Fragment {
 
-    ArrayList<String> floor;
     ArrayList<String> views;
-    RadioGroup radioGroup,radioGroup2;
+    RadioGroup radioGroup;
     ExtendedViewPager viewPager;
+    GlobalClass global;
+    TextView elevation;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.home_mathura, container, false);
-        floor=new ArrayList<>();
+        global=(GlobalClass)getActivity().getApplicationContext();
+
         views=new ArrayList<>();
         views.add("VIEW -01");
-
-        floor.add("FLAT -A");
-        floor.add("FLAT -B");
-        floor.add("FLAT -C");
-        floor.add("FLAT -D");
 
 
 
@@ -66,21 +66,7 @@ public class Home extends Fragment {
 
         RadioGroup.LayoutParams rprms;
 
-        for (int i = 1; i < floor.size()+1; i++) {
-            RadioButton  radioButton = new RadioButton(getActivity());
-            radioButton.setText(floor.get(i-1));
-            radioButton.setTextSize(16);
-            radioButton.setPadding(10, 10, 10, 10);
-            radioButton.setId(i);
-            radioButton.setGravity(Gravity.CENTER);
-            radioButton.setTextColor(getResources().getColorStateList(R.color.rbtn_textcolor_selector));
-            radioButton.setButtonDrawable(null);
-            radioButton.setBackgroundResource(R.drawable.mahtura_radio);
-            rprms = new RadioGroup.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f);
-            radioGroup2.addView(radioButton, rprms);
 
-
-        }
 
         for (int i = 0; i < views.size(); i++) {
             RadioButton radioButton = new RadioButton(getActivity());
@@ -93,6 +79,8 @@ public class Home extends Fragment {
             radioButton.setTextColor(getResources().getColorStateList(R.color.rbtn_textcolor_selector));
             radioButton.setButtonDrawable(null);
             radioButton.setBackgroundResource(R.drawable.mahtura_radio);
+            global.setTypeface(radioButton);
+
             rprms = new RadioGroup.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f);
             radioGroup.addView(radioButton, rprms);
 
@@ -108,12 +96,6 @@ public class Home extends Fragment {
             }
         });
 
-        radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                viewPager.setCurrentItem(i);
-            }
-        });
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -124,31 +106,12 @@ public class Home extends Fragment {
             @Override
             public void onPageSelected(int position) {
 
-                if(position<=0)
-                {
+
                     radioGroup.check(position);
 
-                 /*   for(int i=1;i<floor.size()+1;i++)
-                    {
-                        RadioButton radioButton=(RadioButton)radioGroup2.findViewById(i);
-                        radioButton.setChecked(false);
-                    }
-
-*/
 
 
-                }else if(position>0)
-                {
-                    radioGroup2.check(position);
 
-                  /*  for(int i=0;i<views.size();i++)
-                    {
-                        RadioButton radioButton=(RadioButton)radioGroup.findViewById(i);
-                        radioButton.setChecked(false);
-                    }*/
-
-
-                }
 
 
                /* if(position>3)
@@ -208,7 +171,7 @@ public class Home extends Fragment {
     public class CustomPagerAdapter extends PagerAdapter {
 
         private Context mContext;
-        int drawables[] = new int[]{R.drawable.mathura_floor1,R.drawable.mathura_floor1, R.drawable.mathura_floor2, R.drawable.mathura_floor3, R.drawable.mathura_floor4
+        int drawables[] = new int[]{R.drawable.mathura_floor1
         };
 
         public CustomPagerAdapter(Context context) {
@@ -256,7 +219,9 @@ public class Home extends Fragment {
     void init(View view)
     {
         radioGroup= (RadioGroup) view.findViewById(R.id.views);
-        radioGroup2= (RadioGroup) view.findViewById(R.id.floors);
+        elevation= (TextView) view.findViewById(R.id.elevation);
+        elevation.setVisibility(View.VISIBLE);
+        radioGroup.setVisibility(View.VISIBLE);
         viewPager = (ExtendedViewPager)view. findViewById(R.id.viewpager);
 
         flatintialise();

@@ -16,11 +16,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.site.siteproject.MainActivity;
 import com.site.siteproject.R;
 import com.site.siteproject.thiruvidanthai.DashBoard;
+import com.site.siteproject.utils.GlobalClass;
 import com.site.siteproject.utils.WSUtils;
 
 import org.json.JSONException;
@@ -34,17 +36,37 @@ import java.util.HashMap;
 
 public class ContactUS extends AppCompatActivity {
     EditText name, email, phone_number;
+
     Button submit;
     String names, emails, phone;
+    TextView nametext,emailtext,phonetext;
+    GlobalClass global;
 
 
         @Override
         protected void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.jaishree_contactus);
+            global=(GlobalClass)getApplicationContext();
             name = (EditText) findViewById(R.id.name);
             email = (EditText)findViewById(R.id.email);
             phone_number = (EditText) findViewById(R.id.phone);
+
+
+            nametext = (TextView) findViewById(R.id.nametext);
+            emailtext = (TextView)findViewById(R.id.emailtext);
+            phonetext = (TextView) findViewById(R.id.phonetext);
+
+            global.setTypeface(name);
+            global.setTypeface(email);
+            global.setTypeface(phone_number);
+            global.setTypeface(nametext);
+            global.setTypeface(emailtext);
+            global.setTypeface(phonetext);
+            global.setTypeface(submit);
+
+
+
             submit = (Button) findViewById(R.id.submit);
 
             submit.setBackgroundResource(R.drawable.ailis_interestbg);

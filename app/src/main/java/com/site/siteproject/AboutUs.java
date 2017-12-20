@@ -11,16 +11,19 @@ import android.view.View;
 import android.widget.Button;
 
 import com.site.siteproject.ailis.adapter.about_us_adapter;
+import com.site.siteproject.utils.GlobalClass;
 
 /**
  * Created by Creative IT Works on 15-Dec-17.
  */
 
 public class AboutUs extends AppCompatActivity {
+    GlobalClass global;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
+        global=(GlobalClass)getApplicationContext();
 
         RecyclerView recyclerView=(RecyclerView)findViewById(R.id.list);
         Button button=(Button)findViewById(R.id.continues);

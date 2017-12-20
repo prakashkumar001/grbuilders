@@ -19,11 +19,13 @@
 
 
         <TextView
+            android:id="@+id/elevation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:visibility="gone"
             android:text="Elevation"
             />
 
@@ -32,6 +34,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:visibility="gone"
+
             android:layout_below="@+id/rl_title"
             android:orientation="horizontal">
 
@@ -39,11 +43,13 @@
 
 
         <TextView
+            android:id="@+id/floortext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="20dp"
             android:layout_marginLeft="10dp"
+            android:visibility="gone"
             android:textStyle="bold"
             android:text="Floor Plan"
             />
@@ -52,6 +58,8 @@
             android:layout_width="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_height="wrap_content"
+            android:visibility="gone"
+
             android:layout_below="@+id/rl_title"
             android:orientation="horizontal">
 

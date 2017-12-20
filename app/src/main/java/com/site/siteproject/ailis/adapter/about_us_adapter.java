@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.site.siteproject.R;
+import com.site.siteproject.utils.GlobalClass;
 
 /**
  * Created by Creative IT Works on 15-Dec-17.
@@ -24,13 +25,12 @@ public class about_us_adapter extends RecyclerView.Adapter<about_us_adapter.MyVi
     Activity context;
     int lastCheckPosition = -1;
     Dialog dialog;
+    GlobalClass globalClass;
 
-    int[] res = {
-            R.drawable.ailis_spec1,R.drawable.ailis_spec2,R.drawable.ailis_spec3,R.drawable.ailis_spec4,R.drawable.ailis_spec5,R.drawable.ailis_spec6,R.drawable.ailis_spec7,R.drawable.ailis_spec_10,R.drawable.ailis_spec8,R.drawable.ailis_spec9};
-    String[] contents={"Framed structure with RCC column beams over masonry walls - plastered and paint finished. / Anti-termite treatment. / Rain Water Harvesting.","Kitchen platform will be granite with a single bowl with drain board stainless steel sink and glazed tiles dado of 4’0” feet above the kitchen platform, 5’0” feet dado in utility area (if provided). Aqua guard point in kitchen","Living, dining and bedroom area will be finished with good quality vitrified tiles of builder’s choice with necessary skirting","Living, dining and bedrooms walls will be finished with putty and emulsion paint. False ceiling (Plaster of Paris) with adequate light fittings will be provided for living, dining and bedrooms as per builder’s choice. All wooden frames and shutters will be polished and finished.","Ceramic flooring in the toilets will be provided as per builder’s choice (Anti Skid tiles).Bathroom walls will be covered with ceramic tiles as per builder’s choice up to ceiling height.Concealed / open plumbing lines along with pressurized water supply from the overhead tank will be provided.All closets and washbasins will be white (Jaguar/equivalent) of builder’s choice Hot and cold wall mixer will be provided for shower area & wash basins inside the bathrooms. All C.P. fittings will be Jaguar Florentine Collection / equivalent fitting.Toilet closets will be EWC floor as per builder's choice.","Concealed copper wiring suitable for three-phase supply, will be of ISI quality. Switches & sockets with adequate points for light, fan and power supply will be provided. Three phases supply with auto phase changer with trip switch will be provided. One calling bell point will be provided. Copper wiring for VRV system for entire villa except kitchen.","Main doorframe will be of teak wood and door shutter will be of teak wood panel door, finished with melamine polish.Other doors will be with good quality wood frames and flush doors with laminate sheets on both sides. All door fittings will be of brass fittings.Main door will be provided with Godrej or equivalent lock, door eye, tower bolt & door stopper.Doors to the bedrooms will be provided with door handles (SS finish).Door and frame will not be provided for kitchen.","Individual bore well and sump will be provided. Separate pumps for bore well and sump will be provided. Automatic water level controller for pumps will be provided.","Steel grills (painted) will be provided in all windows and ventilators. Windows will be of well seasoned country wood. Ventilators will be of good quality wood frame.","Anti-termite treatment, Aqua guard point in kitchen"};
+      String[] contents={"Nahar Foundation’s Private Limited (NFPL) saw its beginning that reflected their penchant to provide quality realty solutions, and that aimed at creating homes and not just houses for their clients. Their keen eye for detail and expertise with the intricacies of construction has brought over 60 prestigious residential projects to the firm’s dossier.","Incorporated in the year 2003, Nahar Foundations has offered exceptional real estate developments over the years that adorn the city’s magnificent skyline.","Guided by integrity, innovation, quality and high service standards, Nahar Foundations has grown momentously to attain a distinguished position of leadership in the real estate industry by successfully crafting many landmark projects across the city. Each of the Nahar projects stands apart in their aesthetic design, impeccable quality and enticing features that lend exceptional value and privilege to those who own them."};
 
     public about_us_adapter(Activity context) {
-
+        globalClass=(GlobalClass)context.getApplicationContext();
         this.context = context;
 
 
@@ -48,14 +48,15 @@ public class about_us_adapter extends RecyclerView.Adapter<about_us_adapter.MyVi
 
     @Override
     public void onBindViewHolder(about_us_adapter.MyViewHolder holder, final int position) {
-        holder.content.setText(contents[position]);
 
+        holder.content.setText(contents[position]);
+        globalClass.setTypeface(holder.content);
 
     }
 
     @Override
     public int getItemCount() {
-        return res.length;
+        return contents.length;
     }
 
 

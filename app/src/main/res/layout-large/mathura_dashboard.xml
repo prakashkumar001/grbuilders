@@ -33,7 +33,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     >
 
@@ -56,11 +56,12 @@
                             />
 
                         <TextView
+                            android:id="@+id/elevation_text"
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:textColor="@android:color/white"
-                            android:textSize="18dp"
+                            android:textSize="14dp"
                             android:layout_marginLeft="5dp"
                             android:gravity="left"
                             android:layout_gravity="center"
@@ -96,11 +97,13 @@
                             />
 
                         <TextView
+                            android:id="@+id/floor_text"
+
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:textColor="@android:color/white"
-                            android:textSize="18dp"
+                            android:textSize="14dp"
                             android:layout_marginLeft="5dp"
                             android:gravity="left"
                             android:layout_gravity="center"
@@ -138,11 +141,13 @@
                             />
 
                         <TextView
+                            android:id="@+id/specification_text"
+
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:textColor="@android:color/white"
-                            android:textSize="18dp"
+                            android:textSize="14dp"
                             android:layout_marginLeft="5dp"
                             android:gravity="left"
                             android:layout_gravity="center"
@@ -181,11 +186,13 @@
                             />
 
                         <TextView
+                            android:id="@+id/location_text"
+
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:textColor="@android:color/white"
-                            android:textSize="18dp"
+                            android:textSize="14dp"
                             android:paddingLeft="3dp"
 
                             android:layout_marginLeft="5dp"
@@ -224,11 +231,13 @@
                             />
 
                         <TextView
+                            android:id="@+id/rate_text"
+
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:textColor="@android:color/white"
-                            android:textSize="18dp"
+                            android:textSize="14dp"
                             android:layout_marginLeft="5dp"
                             android:gravity="left"
                             android:layout_gravity="center"
@@ -266,11 +275,13 @@
                             />
 
                         <TextView
+                            android:id="@+id/contact_text"
+
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:textColor="@android:color/white"
-                            android:textSize="18dp"
+                            android:textSize="14dp"
                             android:layout_marginLeft="5dp"
                             android:gravity="left"
                             android:layout_gravity="center"
