@@ -71,7 +71,7 @@ public class Home extends Fragment {
         for (int i = 0; i < flatnames.size(); i++) {
             radioButton = new RadioButton(getActivity());
             radioButton.setText(flatnames.get(i));
-            radioButton.setTextSize(16);
+            radioButton.setTextSize(22);
             radioButton.setPadding(10, 10, 10, 10);
             radioButton.setChecked(i == 0);
             radioButton.setId(i);

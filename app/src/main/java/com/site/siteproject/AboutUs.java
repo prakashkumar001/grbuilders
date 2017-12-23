@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.site.siteproject.ailis.adapter.about_us_adapter;
 import com.site.siteproject.utils.GlobalClass;
@@ -19,6 +20,7 @@ import com.site.siteproject.utils.GlobalClass;
 
 public class AboutUs extends AppCompatActivity {
     GlobalClass global;
+    TextView phone,web;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,12 @@ public class AboutUs extends AppCompatActivity {
 
         RecyclerView recyclerView=(RecyclerView)findViewById(R.id.list);
         Button button=(Button)findViewById(R.id.continues);
+         phone=(TextView)findViewById(R.id.phone);
+         web=(TextView)findViewById(R.id.web);
+
+        global.setTypeface(phone);
+        global.setTypeface(web);
+
 
         about_us_adapter about_us_adapters=new about_us_adapter(AboutUs.this);
         LinearLayoutManager ll = new LinearLayoutManager(this);

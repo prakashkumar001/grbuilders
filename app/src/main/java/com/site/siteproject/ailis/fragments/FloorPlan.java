@@ -64,7 +64,7 @@ public class FloorPlan  extends Fragment {
         for (int i = 0; i < floor.size() ; i++) {
             RadioButton radioButton = new RadioButton(getActivity());
             radioButton.setText(floor.get(i));
-            radioButton.setTextSize(16);
+            radioButton.setTextSize(22);
             radioButton.setPadding(10, 10, 10, 10);
             radioButton.setId(i);
             radioButton.setChecked(i == 0);

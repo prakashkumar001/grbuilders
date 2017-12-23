@@ -7,13 +7,14 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_weight=".3"
-        android:background="#FFFFFF"
+        android:background="#D91F16"
         android:orientation="vertical"
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:background="@android:color/white"
             android:layout_gravity="center"
             android:src="@drawable/thiruvidanthai_splash_img"
 
@@ -27,7 +28,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#D91F16"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical"
                 >
 
@@ -56,11 +57,12 @@
                             />
 
                         <TextView
+                            android:id="@+id/elevation_text"
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:textColor="@android:color/white"
-                            android:textSize="18dp"
+                            android:textSize="22dp"
                             android:layout_marginLeft="5dp"
                             android:gravity="left"
                             android:layout_gravity="center"
@@ -96,11 +98,13 @@
                             />
 
                         <TextView
+                            android:id="@+id/floor_text"
+
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:textColor="@android:color/white"
-                            android:textSize="18dp"
+                            android:textSize="22dp"
                             android:layout_marginLeft="5dp"
                             android:gravity="left"
                             android:layout_gravity="center"
@@ -138,11 +142,13 @@
                             />
 
                         <TextView
+                            android:id="@+id/specification_text"
+
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:textColor="@android:color/white"
-                            android:textSize="18dp"
+                            android:textSize="22dp"
                             android:layout_marginLeft="5dp"
                             android:gravity="left"
                             android:layout_gravity="center"
@@ -181,11 +187,13 @@
                             />
 
                         <TextView
+                            android:id="@+id/location_text"
+
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:textColor="@android:color/white"
-                            android:textSize="18dp"
+                            android:textSize="22dp"
                             android:paddingLeft="3dp"
 
                             android:layout_marginLeft="5dp"
@@ -210,7 +218,7 @@
                     <LinearLayout
                         android:id="@+id/ratechart"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="70dp"
                         android:orientation="horizontal"
                         >
 
@@ -224,11 +232,13 @@
                             />
 
                         <TextView
+                            android:id="@+id/rate_text"
+
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:textColor="@android:color/white"
-                            android:textSize="18dp"
+                            android:textSize="22dp"
                             android:layout_marginLeft="5dp"
                             android:gravity="left"
                             android:layout_gravity="center"
@@ -252,7 +262,7 @@
                     <LinearLayout
                         android:id="@+id/contactus"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="70dp"
                         android:orientation="horizontal"
                         >
 
@@ -266,11 +276,13 @@
                             />
 
                         <TextView
+                            android:id="@+id/contact_text"
+
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:textColor="@android:color/white"
-                            android:textSize="18dp"
+                            android:textSize="22dp"
                             android:layout_marginLeft="5dp"
                             android:gravity="left"
                             android:layout_gravity="center"
@@ -293,11 +305,23 @@
                 </LinearLayout>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </LinearLayout>
 
         </ScrollView>
-
-
 
 
     </LinearLayout>
@@ -306,7 +330,40 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            >
+
+
+
+
+            <RadioGroup
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_title"
+                android:orientation="horizontal"></RadioGroup>
+
+
+
+            <RadioGroup
+                android:id="@+id/floor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_title"
+                android:orientation="horizontal"></RadioGroup>
+
+
+
+
+        </LinearLayout>
+
 
         <FrameLayout
             android:id="@+id/container"

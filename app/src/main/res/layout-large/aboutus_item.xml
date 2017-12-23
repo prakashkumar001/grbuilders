@@ -17,9 +17,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:gravity="center|left"
-        android:textSize="18dp"
+        android:textSize="30dp"
         android:textColor="@android:color/white"
-        android:text="kjghfisdhjfsfhjhndjhrtrghrg\n ohgdhgdfhgudhfg \njhfysdgfy"
+        android:text=""
         />
 
 </LinearLayout>
