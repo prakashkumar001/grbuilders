@@ -51,6 +51,7 @@ public class ContactUS extends AppCompatActivity {
             name = (EditText) findViewById(R.id.name);
             email = (EditText)findViewById(R.id.email);
             phone_number = (EditText) findViewById(R.id.phone);
+            submit = (Button) findViewById(R.id.submit);
 
 
             nametext = (TextView) findViewById(R.id.nametext);

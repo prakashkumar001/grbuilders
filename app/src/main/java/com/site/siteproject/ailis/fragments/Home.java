@@ -31,7 +31,7 @@ import java.util.ArrayList;
 public class Home extends Fragment {
 
     ArrayList<String> views;
-    RadioGroup radioGroup,radioGroup2;
+    RadioGroup radioGroup;
     ExtendedViewPager viewPager;
     TextView elevation;
     GlobalClass global;
@@ -55,6 +55,7 @@ public class Home extends Fragment {
 
 
         viewPager.setAdapter(new CustomPagerAdapter(getActivity()));
+
 
 
         return view;
@@ -136,7 +137,7 @@ public class Home extends Fragment {
 
             }
         });
-        viewPager.setCurrentItem(0);
+
 
 
     }
