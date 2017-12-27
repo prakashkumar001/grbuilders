@@ -26,6 +26,7 @@ import com.site.siteproject.NaharContact;
 import com.site.siteproject.R;
 import com.site.siteproject.ailis.fragments.ContactUS;
 import com.site.siteproject.ailis.fragments.FloorPlan;
+import com.site.siteproject.ailis.fragments.RateChart;
 import com.site.siteproject.ailis.fragments.Specification;
 import com.site.siteproject.ailis.fragments.Location;
 import com.site.siteproject.utils.GlobalClass;
@@ -44,7 +45,7 @@ public class DashBoard extends AppCompatActivity {
     ViewPager viewPager;
     RadioButton radioButton;
     GlobalClass global;
-    LinearLayout specification, viewPlans, contactus,location,floorPlans;
+    LinearLayout specification, viewPlans, contactus,location,floorPlans,ratechart;
     TextView elevation_text,location_text,specification_text,rate_text,contact_text,floor_text;
 
     @Override
@@ -57,7 +58,7 @@ public class DashBoard extends AppCompatActivity {
         contactus = (LinearLayout) findViewById(R.id.contactus);
         location= (LinearLayout) findViewById(R.id.location);
         floorPlans= (LinearLayout) findViewById(R.id.floorPlans);
-
+        ratechart= (LinearLayout) findViewById(R.id.ratechart);
 
         elevation_text= (TextView) findViewById(R.id.elevation_text);
         location_text= (TextView) findViewById(R.id.location_text);
@@ -115,6 +116,14 @@ public class DashBoard extends AppCompatActivity {
                 FloorPlan contactUS = new FloorPlan();
                 loadFragment(contactUS);
                 //showInfoDialog();
+            }
+        });
+
+        ratechart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RateChart contactUS = new RateChart();
+                loadFragment(contactUS);
             }
         });
     }
