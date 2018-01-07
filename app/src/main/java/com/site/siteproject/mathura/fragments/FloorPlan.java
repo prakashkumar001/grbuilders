@@ -1,6 +1,7 @@
 package com.site.siteproject.mathura.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
@@ -11,11 +12,13 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.site.siteproject.FullScreenViewPager;
 import com.site.siteproject.R;
 import com.site.siteproject.utils.ExtendedViewPager;
 import com.site.siteproject.utils.GlobalClass;
@@ -136,24 +139,37 @@ public class FloorPlan extends Fragment {
 
 
         private Context mContext;
-        int drawables[] = new int[]{R.drawable.mathura_floor1, R.drawable.mathura_floor2, R.drawable.mathura_floor3, R.drawable.mathura_floor4
-        };
+
+        ArrayList<Integer> drawables = new ArrayList<Integer>();
 
 
         public CustomPagerAdapter(Context context) {
             mContext = context;
+            drawables.add(R.drawable.mathura_floor1);
+            drawables.add(R.drawable.mathura_floor2);
+            drawables.add(R.drawable.mathura_floor3);
+            drawables.add(R.drawable.mathura_floor4);
+
         }
 
         @Override
-        public Object instantiateItem(ViewGroup collection, int position) {
+        public Object instantiateItem(ViewGroup collection, final int position) {
             LayoutInflater inflater = LayoutInflater.from(mContext);
             ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.viewpager_item, collection, false);
 
-            TouchImageView imageView = (TouchImageView) layout.findViewById(R.id.flats);
+            ImageView imageView = (ImageView) layout.findViewById(R.id.flats);
 
-            imageView.setImageResource(drawables[position]);
+            imageView.setImageResource(drawables.get(position));
 
-
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(getActivity(), FullScreenViewPager.class);
+                    i.putIntegerArrayListExtra("drawables",drawables);
+                    i.putExtra("id", position);
+                    startActivity(i);
+                }
+            });
             collection.addView(layout, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
             return layout;
         }
@@ -165,7 +181,7 @@ public class FloorPlan extends Fragment {
 
         @Override
         public int getCount() {
-            return drawables.length;
+            return drawables.size();
         }
 
         @Override

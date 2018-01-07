@@ -3,6 +3,7 @@ package com.site.siteproject.ailis.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,12 +14,15 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
+import com.site.siteproject.Amenities;
 import com.site.siteproject.R;
 import com.site.siteproject.ailis.adapter.LocationIconAdapter;
 import com.site.siteproject.ailis.adapter.SpecificationAdapter;
+import com.site.siteproject.utils.GlobalClass;
 
 /**
  * Created by Prakash on 12/16/2017.
@@ -26,15 +30,18 @@ import com.site.siteproject.ailis.adapter.SpecificationAdapter;
 
 public class Location extends Fragment
 {
-    RecyclerView list;
-    LocationIconAdapter adapter;
-    String YouTubeVideoEmbedCode = "<html><body><iframe width=\"500\" height=\"250\" src=\"https://www.youtube.com/embed/-fEIzQ5JD84\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
 
+    Button next;
+    String YouTubeVideoEmbedCode = "<html><body><iframe width=\"700\" height=\"400\" src=\"https://www.youtube.com/embed/8Zt0DStbKIc\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
+    GlobalClass global;
     private WebView myWebView;
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
             View view = inflater.inflate(R.layout.locations, container, false);
 
+        next=(Button) view.findViewById(R.id.next);
+        global=(GlobalClass) getActivity().getApplicationContext();
+        global.setTypeface(next);
         myWebView = (WebView)view. findViewById(R.id.webview);
 
         myWebView.setWebViewClient(new WebViewClient() {
@@ -46,23 +53,32 @@ public class Location extends Fragment
             }
         });
 
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Amenities amenities=new Amenities();
+                loadFragment(amenities);
+            }
+        });
+
         WebSettings webSettings = myWebView.getSettings();
 
         webSettings.setJavaScriptEnabled(true);
 
         myWebView.loadData(YouTubeVideoEmbedCode, "text/html", "utf-8");
-        list=(RecyclerView)view.findViewById(R.id.list);
 
-        adapter = new LocationIconAdapter(getActivity());
-        GridLayoutManager ll = new GridLayoutManager(getActivity(),3);
-        ll.setOrientation(LinearLayoutManager.VERTICAL);
-        list.setLayoutManager(ll);
-
-        list.setAdapter(adapter);
             return view;
 
         }
 
+    public void loadFragment(Fragment fragments) {
+
+
+        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.container, fragments, fragments.getClass().getSimpleName()).commit();
+
+    }
 
 
 

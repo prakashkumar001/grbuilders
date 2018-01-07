@@ -1,6 +1,7 @@
 package com.site.siteproject.jaishree.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
@@ -11,10 +12,12 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.site.siteproject.FullScreenViewPager;
 import com.site.siteproject.R;
 import com.site.siteproject.utils.ExtendedViewPager;
 import com.site.siteproject.utils.GlobalClass;
@@ -124,21 +127,46 @@ public class Home extends Fragment {
     public class CustomPagerAdapter extends PagerAdapter {
 
         private Context mContext;
-        int drawables[] = new int[]{R.drawable.jaishree_flat1, R.drawable.jaishree_flat1b, R.drawable.jaishree_flat1g, R.drawable.jaishree_flat2a3a4a,
-                R.drawable.jaishree_flat2b3b4b, R.drawable.jaishree_flat2c3c4c, R.drawable.jaishree_flat2d3d4d, R.drawable.jaishree_flat2e3e4e, R.drawable.jaishree_flat2h3h4j,R.drawable.jaishree_flat2j3j4k
-        };
+        ArrayList<Integer> drawables = new ArrayList<Integer>();
+
+
 
         public CustomPagerAdapter(Context context) {
+
             mContext = context;
+            drawables.add(R.drawable.jaishree_flat1);
+            drawables.add(R.drawable.jaishree_flat1b);
+            drawables.add(R.drawable.jaishree_flat1g);
+            drawables.add(R.drawable.jaishree_flat2a3a4a);
+            drawables.add(R.drawable.jaishree_flat2b3b4b);
+            drawables.add(R.drawable.jaishree_flat2c3c4c);
+
+            drawables.add(R.drawable.jaishree_flat2d3d4d);
+            drawables.add(R.drawable.jaishree_flat2e3e4e);
+            drawables.add(R.drawable.jaishree_flat2h3h4j);
+            drawables.add(R.drawable.jaishree_flat2j3j4k);
+
+
         }
 
         @Override
-        public Object instantiateItem(ViewGroup collection, int position) {
+        public Object instantiateItem(ViewGroup collection,final int position) {
             LayoutInflater inflater = LayoutInflater.from(mContext);
             ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.viewpager_item, collection, false);
+            ImageView imageView = (ImageView) layout.findViewById(R.id.flats);
 
-            TouchImageView imageView = (TouchImageView) layout.findViewById(R.id.flats);
-            imageView.setImageResource(drawables[position]);
+            imageView.setImageResource(drawables.get(position));
+
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(getActivity(), FullScreenViewPager.class);
+                    i.putIntegerArrayListExtra("drawables",drawables);
+                    i.putExtra("id", position);
+                    startActivity(i);
+                }
+            });
+
             collection.addView(layout);
             return layout;
         }
@@ -150,7 +178,7 @@ public class Home extends Fragment {
 
         @Override
         public int getCount() {
-            return drawables.length;
+            return drawables.size();
         }
 
         @Override

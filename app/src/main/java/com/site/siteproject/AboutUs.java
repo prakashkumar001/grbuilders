@@ -34,6 +34,7 @@ public class AboutUs extends AppCompatActivity {
 
         global.setTypeface(phone);
         global.setTypeface(web);
+        global.setTypeface(button);
 
 
         about_us_adapter about_us_adapters=new about_us_adapter(AboutUs.this);

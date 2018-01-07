@@ -86,6 +86,9 @@
         <activity android:name=".AboutUs"
             android:screenOrientation="landscape"
             />
+        <activity android:name=".FullScreenViewPager"
+            android:screenOrientation="landscape"
+            />
     </application>
 
 </manifest>
