@@ -49,16 +49,10 @@ public class SpecificationAdapter extends RecyclerView.Adapter<SpecificationAdap
 
     @Override
     public void onBindViewHolder(SpecificationAdapter.MyViewHolder holder, final int position) {
-        holder.layout.setImageResource(res[position]);
+
         holder.content.setText(contents[position]);
         holder.title.setText(titles[position]);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showInfoDialog(position);
-            }
-        });
 
 
     }
@@ -77,11 +71,9 @@ public class SpecificationAdapter extends RecyclerView.Adapter<SpecificationAdap
         public MyViewHolder(View view) {
             super(view);
 
-            layout=(ImageView)itemView.findViewById(R.id.image);
             content=(TextView) itemView.findViewById(R.id.content);
             title=(TextView) itemView.findViewById(R.id.title);
 
-            tv_learnmore_quest=(TextView) itemView.findViewById(R.id.tv_learnmore_quest);
 
 
 

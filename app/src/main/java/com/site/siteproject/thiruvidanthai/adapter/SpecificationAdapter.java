@@ -74,9 +74,8 @@ public class SpecificationAdapter extends RecyclerView.Adapter<SpecificationAdap
         public MyViewHolder(View view) {
             super(view);
 
-            layout=(ImageView)itemView.findViewById(R.id.image);
+
             content=(TextView) itemView.findViewById(R.id.content);
-            tv_learnmore_quest=(TextView) itemView.findViewById(R.id.tv_learnmore_quest);
 
 
 

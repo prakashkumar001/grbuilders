@@ -27,7 +27,7 @@ import android.widget.TextView;
 import com.site.siteproject.MainActivity;
 import com.site.siteproject.NaharContact;
 import com.site.siteproject.R;
-import com.site.siteproject.ailis.fragments.RateChart;
+import com.site.siteproject.jaishree.fragments.RateChart;
 import com.site.siteproject.jaishree.fragments.ContactUS;
 import com.site.siteproject.jaishree.fragments.Home;
 import com.site.siteproject.jaishree.fragments.Specification;
