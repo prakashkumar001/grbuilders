@@ -27,6 +27,7 @@ import android.widget.TextView;
 import com.site.siteproject.MainActivity;
 import com.site.siteproject.NaharContact;
 import com.site.siteproject.R;
+import com.site.siteproject.ailis.fragments.RateChart;
 import com.site.siteproject.jaishree.fragments.ContactUS;
 import com.site.siteproject.jaishree.fragments.Home;
 import com.site.siteproject.jaishree.fragments.Specification;
@@ -41,7 +42,7 @@ import java.util.ArrayList;
 
 public class DashBoard extends AppCompatActivity{
 
-    LinearLayout specification,viewPlans,jaishree_contactus,location;
+    LinearLayout specification,viewPlans,jaishree_contactus,location,ratechart;
     TextView elevation_text,location_text,specification_text,rate_text,contact_text,floor_text;
 GlobalClass global;
     @Override
@@ -54,6 +55,7 @@ GlobalClass global;
         viewPlans=(LinearLayout) findViewById(R.id.viewPlans);
         jaishree_contactus=(LinearLayout) findViewById(R.id.contactus);
         location= (LinearLayout) findViewById(R.id.location);
+        ratechart= (LinearLayout) findViewById(R.id.ratechart);
 
         elevation_text= (TextView) findViewById(R.id.elevation_text);
         location_text= (TextView) findViewById(R.id.location_text);
@@ -101,6 +103,13 @@ GlobalClass global;
                 Location contactUS = new Location();
                 loadFragment(contactUS);
                 //showInfoDialog();
+            }
+        });
+        ratechart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RateChart contactUS = new RateChart();
+                loadFragment(contactUS);
             }
         });
     }

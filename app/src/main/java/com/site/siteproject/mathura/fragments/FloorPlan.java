@@ -76,7 +76,7 @@ public class FloorPlan extends Fragment {
             radioButton.setGravity(Gravity.CENTER);
             radioButton.setTextColor(getResources().getColorStateList(R.color.rbtn_textcolor_selector));
             radioButton.setButtonDrawable(null);
-            radioButton.setBackgroundResource(R.drawable.ailis_radio_selector_circle);
+            radioButton.setBackgroundResource(R.drawable.mahtura_radio);
             global.setTypeface(radioButton);
             rprms = new RadioGroup.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f);
             radioGroup2.addView(radioButton, rprms);

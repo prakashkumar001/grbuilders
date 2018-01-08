@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +18,7 @@ import android.widget.Button;
 import com.site.siteproject.Amenities;
 import com.site.siteproject.R;
 import com.site.siteproject.utils.GlobalClass;
+import com.site.siteproject.ailis.adapter.LocationIconAdapter;
 
 /**
  * Created by Prakash on 12/16/2017.
@@ -34,6 +38,7 @@ GlobalClass global;
         global.setTypeface(next);
 
         myWebView = (WebView) view.findViewById(R.id.webview);
+
 
         myWebView.setWebViewClient(new WebViewClient() {
 
