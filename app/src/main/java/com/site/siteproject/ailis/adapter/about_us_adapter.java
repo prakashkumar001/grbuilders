@@ -62,8 +62,7 @@ public class about_us_adapter extends RecyclerView.Adapter<about_us_adapter.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView layout;
-        TextView content,tv_learnmore_quest,title;
+        TextView content;
 
         public MyViewHolder(View view) {
             super(view);

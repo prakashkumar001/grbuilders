@@ -34,6 +34,7 @@ GlobalClass global;
 
         View view = inflater.inflate(R.layout.locations, container, false);
         next = (Button) view.findViewById(R.id.next);
+        next.setBackgroundResource(R.drawable.jaishree_interset_bg);
         global=(GlobalClass) getActivity().getApplicationContext();
         global.setTypeface(next);
 

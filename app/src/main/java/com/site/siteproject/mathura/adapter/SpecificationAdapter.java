@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.site.siteproject.R;
+import com.site.siteproject.utils.GlobalClass;
 
 /**
  * Created by Creative IT Works on 14-Nov-17.
@@ -24,6 +25,7 @@ public class SpecificationAdapter extends RecyclerView.Adapter<SpecificationAdap
     Activity context;
     int lastCheckPosition = -1;
     Dialog dialog;
+    GlobalClass global;
 
     int[] res = {
             R.drawable.ailis_spec1,R.drawable.ailis_spec2,R.drawable.ailis_spec3,R.drawable.ailis_spec4,R.drawable.ailis_spec5,R.drawable.ailis_spec6,R.drawable.ailis_spec7,R.drawable.ailis_spec_10,R.drawable.ailis_spec8,R.drawable.ailis_spec9};
@@ -33,6 +35,7 @@ public class SpecificationAdapter extends RecyclerView.Adapter<SpecificationAdap
     public SpecificationAdapter(Activity context) {
 
         this.context = context;
+        global=(GlobalClass)context.getApplicationContext();
 
 
 
@@ -51,7 +54,9 @@ public class SpecificationAdapter extends RecyclerView.Adapter<SpecificationAdap
     public void onBindViewHolder(SpecificationAdapter.MyViewHolder holder, final int position) {
 
         holder.content.setText(contents[position]);
-
+        holder.title.setText(titles[position]);
+        global.setTypeface( holder.content);
+        global.setTypeface(holder.title);
 
     }
 

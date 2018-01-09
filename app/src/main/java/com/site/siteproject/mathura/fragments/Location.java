@@ -37,7 +37,7 @@ public class Location extends Fragment {
         View view = inflater.inflate(R.layout.locations, container, false);
         next = (Button) view.findViewById(R.id.next);
 
-
+        next.setBackgroundResource(R.drawable.mathur_interestbg);
         global=(GlobalClass) getActivity().getApplicationContext();
         global.setTypeface(next);
 

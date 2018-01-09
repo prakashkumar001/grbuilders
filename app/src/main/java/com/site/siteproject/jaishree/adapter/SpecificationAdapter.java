@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.site.siteproject.R;
+import com.site.siteproject.utils.GlobalClass;
 
 import org.w3c.dom.Text;
 
@@ -38,6 +39,7 @@ public class SpecificationAdapter  extends RecyclerView.Adapter<SpecificationAda
             ,"Kitchen platform will be polished granite with a single bowl stainless steel sink and glazed tiles","Living, dining and bedroom area will be finished with good quality 2X2 vitrified tiles of builder’s choice with necessary skirting. | Ceramic flooring in the toilet will be provided as builder’s choice.","Concealed / open pluming line from the overhead tank will be provided | All closets and washbasins will be of white color as per builder’s choice | Provision in plumbing for connection one geyser in each toilet.","Concealed copper wiring suitable for three-phase supply, will be of ISI quality | Switches & sockets with adequate points for light, fan and power supply will be provided. | Separate meter for lighting in common areas and pumps.","Main doorframe be of teak and door shutter will be of good quality imported skin, finished with lacquer varnish. | Other doors will be with good quality wood frame and flush doors painted on both side.","Living , dining and bedrooms walls will be finished with emulsion paint. | Ceiling will be finished with cement paint | All wooden frames, shutters and M.S. Grill will be finished with enamel paint.","Two Common bore wells and one sump will be provided | Two pump for bore well and one pump for sump will be provided.",
          "Steel grills (painted) Will be provided in all windows and ventilators. | Windows will be of well seasoned country wood. | Ventilators will be good quality wood frame with glass louvers.","Anti-termite treatment | Aqua guard point in kitchen | Automatic water level controller for pumps will be provided | One individual letterbox will be provided at the entrance to the building."};
 
+    GlobalClass global;
 
 
     String[] titles={"Type of Construction","Kitchen","Flooring","Painting","Plumbing and Sanitary","Electrical","Doors","Water Supply","Windows and Ventilators","General"};
@@ -47,6 +49,7 @@ public class SpecificationAdapter  extends RecyclerView.Adapter<SpecificationAda
         this.context = context;
 
 
+        global=(GlobalClass)context.getApplicationContext();
 
     }
 
@@ -64,6 +67,8 @@ public class SpecificationAdapter  extends RecyclerView.Adapter<SpecificationAda
 
         holder.content.setText(contents[position]);
         holder.title.setText(titles[position]);
+        global.setTypeface( holder.content);
+        global.setTypeface(holder.title);
 
 
 
