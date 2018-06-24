@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.site.siteproject.ailis.adapter.about_us_adapter;
+import com.site.siteproject.vrgrand.adapter.about_us_adapter;
 import com.site.siteproject.utils.GlobalClass;
 
 /**

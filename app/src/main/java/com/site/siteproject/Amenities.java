@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.site.siteproject.ailis.adapter.LocationIconAdapter;
+import com.site.siteproject.vrgrand.adapter.LocationIconAdapter;
 
 /**
  * Created by Prakash on 1/7/2018.

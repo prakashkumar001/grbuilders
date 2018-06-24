@@ -8,13 +8,12 @@ package com.site.siteproject;
         import android.content.Context;
         import android.content.Intent;
         import android.support.v4.view.PagerAdapter;
-        import android.util.Log;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
         import android.widget.ImageView;
 
-        import com.site.siteproject.ailis.Splash;
+        import com.site.siteproject.vrgrand.Splash;
 
 
 public class HomePageradapter extends PagerAdapter {
@@ -22,7 +21,7 @@ public class HomePageradapter extends PagerAdapter {
     private Context mContext;
 
     int[] res = {
-            R.drawable.ailis_logo,R.drawable.jaishree_logo,R.drawable.mathura_nav_icon,R.drawable.nahar_logo,R.drawable.thiruvidanthai_splash_img};
+            R.drawable.logo,R.drawable.logo,R.drawable.logo,R.drawable.logo,R.drawable.logo};
 
 
 
@@ -60,36 +59,36 @@ public class HomePageradapter extends PagerAdapter {
 
                 }else if(position==1)
                 {
-                    Intent mainIntent = new Intent(
+                    /*Intent mainIntent = new Intent(
                             mContext,
                             com.site.siteproject.jaishree.Splash.class);
 
                     mContext.startActivity(mainIntent);
-
+*/
                 }else if(position==2)
                 {
-                    Intent mainIntent = new Intent(
+                   /* Intent mainIntent = new Intent(
                             mContext,
                             com.site.siteproject.mathura.Splash.class);
 
                     mContext.startActivity(mainIntent);
-
+*/
                 }else if(position==3)
                 {
-                    Intent mainIntent = new Intent(
+                   /* Intent mainIntent = new Intent(
                             mContext,
                             com.site.siteproject.padapai_nahar.Splash.class);
 
                     mContext.startActivity(mainIntent);
-
+*/
                 }else if(position==4)
                 {
-                    Intent mainIntent = new Intent(
+                   /* Intent mainIntent = new Intent(
                             mContext,
                             com.site.siteproject.thiruvidanthai.Splash.class);
 
                     mContext.startActivity(mainIntent);
-
+*/
                 }
             }
         });

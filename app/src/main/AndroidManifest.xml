@@ -5,10 +5,10 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
-        android:icon="@drawable/nahar_app_icon"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:name=".utils.GlobalClass"
-        android:roundIcon="@drawable/nahar_app_icon"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".MainSplash"
@@ -26,63 +26,21 @@
             android:screenOrientation="landscape"
             />
 
-        <activity android:name=".ailis.Splash"
-            android:screenOrientation="landscape"
-            />
-        <activity android:name=".jaishree.Splash"
-            android:screenOrientation="landscape"
-
-            />
-        <activity android:name=".padapai_nahar.Splash"
-            android:screenOrientation="landscape"
-
-            />
-        <activity android:name=".mathura.Splash"
-            android:screenOrientation="landscape"
-
-            />
-        <activity android:name=".thiruvidanthai.Splash"
-            android:screenOrientation="landscape"
-
-            />
-
-
-        <activity android:name=".ailis.DashBoard"
-            android:screenOrientation="landscape"
-            />
-        <activity android:name=".jaishree.DashBoard"
-            android:screenOrientation="landscape"
-            />
-        <activity android:name=".mathura.DashBoard"
-            android:screenOrientation="landscape"
-            />
-        <activity android:name=".padapai_nahar.DashBoard"
-            android:screenOrientation="landscape"
-            />
-        <activity android:name=".thiruvidanthai.DashBoard"
+        <activity android:name=".vrgrand.Splash"
             android:screenOrientation="landscape"
             />
 
 
-        <activity android:name=".ailis.fragments.ContactUS"
+        <activity android:name=".vrgrand.DashBoard"
+            android:screenOrientation="landscape"
+            />
+
+        <activity android:name=".vrgrand.fragments.ContactUS"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="adjustPan"
 
             />
-        <activity android:name=".thiruvidanthai.fragments.ContactUS"
-            android:screenOrientation="landscape"
-            android:windowSoftInputMode="adjustPan"
 
-            />
-        <activity android:name=".jaishree.fragments.ContactUS"
-            android:screenOrientation="landscape"
-            android:windowSoftInputMode="adjustPan"
-
-            />
-        <activity android:name=".mathura.fragments.ContactUS"
-            android:screenOrientation="landscape"
-            android:windowSoftInputMode="adjustPan"
-            />
         <activity android:name=".AboutUs"
             android:screenOrientation="landscape"
             />
