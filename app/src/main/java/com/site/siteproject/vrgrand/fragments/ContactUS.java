@@ -1,6 +1,7 @@
 package com.site.siteproject.vrgrand.fragments;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -11,6 +12,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,7 +35,7 @@ import java.util.HashMap;
 public class ContactUS extends AppCompatActivity {
     EditText name, email, phone_number;
 
-    Button submit;
+    Button submit,skip;
     String names, emails, phone;
     TextView nametext,emailtext,phonetext;
     GlobalClass global;
@@ -48,7 +50,7 @@ public class ContactUS extends AppCompatActivity {
             email = (EditText)findViewById(R.id.email);
             phone_number = (EditText) findViewById(R.id.phone);
             submit = (Button) findViewById(R.id.submit);
-
+            skip= (Button) findViewById(R.id.skip);
 
             nametext = (TextView) findViewById(R.id.nametext);
             emailtext = (TextView)findViewById(R.id.emailtext);
@@ -61,10 +63,17 @@ public class ContactUS extends AppCompatActivity {
             global.setTypeface(emailtext);
             global.setTypeface(phonetext);
             global.setTypeface(submit);
+            global.setTypeface(skip);
 
 
-
-            submit = (Button) findViewById(R.id.submit);
+               skip.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(getApplicationContext(), com.site.siteproject.vrgrand.DashBoard.class);
+                    startActivity(i);
+                    finish();
+                }
+            });
 
             submit.setBackgroundResource(R.drawable.ailis_interestbg);
 
@@ -117,7 +126,7 @@ public class ContactUS extends AppCompatActivity {
                 data.put("project", "ailis");
 
 
-                response = new WSUtils().getResultFromHttpRequest("http://www.passinovat.com/demo/tab.php", "POST", data);
+                response = new WSUtils().getResultFromHttpRequest("http://absolutionslab.com/vrbuilders/", "POST", data);
                 Log.i("JSON", "JSON" + response);
 
 
@@ -138,7 +147,7 @@ public class ContactUS extends AppCompatActivity {
                     try {
                         JSONObject object=new JSONObject(s);
                         String status=object.getString("status");
-                        if(status.equalsIgnoreCase("success"))
+                        if(status.equalsIgnoreCase("200"))
                         {
                             successDialog("Mail Sent successfully");
 
